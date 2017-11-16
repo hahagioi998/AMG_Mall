@@ -1,0 +1,385 @@
+@charset "utf-8";
+/* CSS Document */
+/*---------------header---------------*/
+.soubg {
+	width: 100%;
+	min-width: 1200px;
+	height: 35px;
+	background-color: #f6f6f6;
+	font-family: "宋体";
+}
+
+.sou {
+	width: 1200px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.s_city_b {
+	width: 150px;
+	height: 35px;
+	float: left;
+}
+
+.s_city {
+	height: 35px;
+	background: url(../images/t_arrow.gif) no-repeat right center;
+	float: left;
+	padding-right: 15px;
+	cursor: pointer;
+	position: relative;
+}
+
+.s_city:hover .s_city_bg {
+	display: block;
+}
+
+.s_city_bg {
+	width: 254px;
+	overflow: hidden;
+	position: absolute;
+	left: -50px;
+	top: 29px;
+	z-index: 900;
+	display: none;
+}
+
+.s_city_t {
+	width: 9px;
+	height: 7px;
+	line-height: 7px;
+	overflow: hidden;
+	background: url(../images/c_t.gif) no-repeat center top;
+	position: absolute;
+	left: 55px;
+	top: 0;
+}
+
+.s_city_c {
+	width: 252px;
+	height: 460px;
+	overflow: hidden;
+	background-color: #FFF;
+	font-family: "Microsoft YaHei";
+	margin-top: 6px;
+	border: 1px solid #cdcdcd;
+}
+
+.s_city_c h2 {
+	width: 230px;
+	height: 29px;
+	line-height: 29px;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: left;
+	margin-top: 5px;
+	border-bottom: 1px dotted #666666;
+}
+
+table.c_tab tr th {
+	line-height: 26px;
+	font-weight: normal;
+	color: #000;
+	width: 20px;
+	text-transform: uppercase;
+}
+
+.c_h span {
+	line-height: 26px;
+	float: left;
+	display: inline;
+	padding: 0 3px;
+	margin-right: 3px;
+	cursor: pointer;
+}
+
+.c_h span:hover {
+	color: #ff4e00;
+}
+
+.c_h span.c_check {
+	color: #FFF;
+	background-color: #ff4e00;
+}
+/*.s_log{
+	width:220px; height:35px; overflow:hidden; float:left;
+}*/
+.ss {
+	width: 225px;
+	height: 35px;
+	float: left;
+}
+
+.ss_list {
+	height: 35px;
+	background: url(../images/t_arrow.gif) no-repeat right center;
+	float: left;
+	display: inline;
+	margin-left: 10px;
+	padding-right: 15px;
+	cursor: pointer;
+	position: relative;
+}
+
+.ss_list:hover .ss_list_bg {
+	display: block;
+}
+
+.ss_list_bg {
+	width: 116px;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	top: 29px;
+	margin-left: -58px;
+	z-index: 900;
+	display: none;
+}
+
+.ss_list_t {
+	height: 7px;
+	line-height: 7px;
+	overflow: hidden;
+	background: url(../images/c_t.gif) no-repeat center top;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.ss_list_c {
+	overflow: hidden;
+	background-color: #FFF;
+	font-family: "Microsoft YaHei";
+	margin-top: 6px;
+	padding: 10px 0;
+	border: 1px solid #cdcdcd;
+}
+
+.ss_list_c ul li {
+	height: 25px;
+	line-height: 25px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.s_sh {
+	width: 55px;
+	height: 35px;
+	overflow: hidden;
+	float: left;
+}
+
+.s_sh a {
+	width: 20px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+	float: left;
+	display: inline;
+	margin: 0 3px;
+	text-indent: -9999em;
+}
+
+.s_sh a.sh1 {
+	background: url(../images/sh1.png) no-repeat center 8px;
+}
+
+.s_sh a.sh2 {
+	background: url(../images/sh2.png) no-repeat center center;
+}
+
+.top {
+	width: 1200px;
+	height: 140px;
+}
+
+.logo {
+	width: 207px;
+	height: 55px;
+	overflow: hidden;
+	float: left;
+	display: inline;
+	margin-top: 40px;
+}
+
+.search {
+	width: 520px;
+	height: 65px;
+	overflow: hidden;
+	float: left;
+	display: inline;
+	margin-left: 134px;
+	margin-top: 50px;
+}
+
+.s_ipt {
+	width: 408px;
+	height: 36px;
+	line-height: 36px\9;
+	overflow: hidden;
+	color: #555555;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	float: left;
+	padding: 0 10px;
+	border: 2px solid #ff4e00;
+	border-right: 0;
+}
+
+.s_btn {
+	width: 90px;
+	height: 40px;
+	line-height: 40px\9;
+	background-color: #ff4e00;
+	color: #FFF;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	float: left;
+	border: 0;
+	cursor: pointer;
+}
+
+.search a {
+	margin-right: 12px;
+	display: inline-block;
+}
+
+.i_car {
+	width: 141px;
+	height: 38px;
+	line-height: 38px;
+	background: url(../images/car.png) no-repeat 10px center;
+	background-color: #f6f6f6;
+	float: right;
+	margin-top: 50px;
+	border: 1px solid #d9d9d9;
+	position: relative;
+}
+
+.car_t {
+	width: 95px;
+	height: 38px;
+	overflow: hidden;
+	background: url(../images/d_arrow.png) no-repeat right center;
+	font-size: 14px;
+	margin-left: 38px;
+	cursor: pointer;
+}
+
+.car_t span {
+	color: #ff4e00;
+}
+
+.i_car:hover .car_bg {
+	display: block;
+}
+
+.car_bg {
+	width: 283px;
+	overflow: hidden;
+	background-color: #FFF;
+	border: 1px solid #d9d9d9;
+	position: absolute;
+	right: -1px;
+	top: 38px;
+	z-index: 900;
+	display: none;
+}
+
+.un_login {
+	overflow: hidden;
+	text-align: center;
+	margin: 15px auto;
+}
+
+ul.cars {
+	overflow: hidden;
+}
+
+ul.cars li {
+	height: 70px;
+	overflow: hidden;
+	margin-top: 10px;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+ul.cars li .img {
+	width: 58px;
+	height: 58px;
+	overflow: hidden;
+	float: left;
+	display: inline;
+	margin-left: 15px;
+	border: 1px solid #e2e2e2;
+}
+
+ul.cars li .name {
+	width: 180px;
+	height: 40px;
+	line-height: 20px;
+	overflow: hidden;
+	color: #888888;
+	font-family: "宋体";
+	float: left;
+	display: inline;
+	margin-left: 8px;
+}
+
+ul.cars li .name a {
+	color: #888888;
+}
+
+ul.cars li .name a:hover {
+	color: #ff4e00;
+}
+
+ul.cars li .price {
+	width: 180px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	color: #888888;
+	font-size: 14px;
+	float: left;
+	display: inline;
+	margin-left: 8px;
+}
+
+.price_sum {
+	width: 255px;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	font-size: 14px;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.price_sum span {
+	color: #ff4e00;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.price_a {
+	width: 120px;
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+	background: url(../images/a_link.gif) repeat-x center top;
+	color: #FFF;
+	font-size: 14px;
+	text-align: center;
+	margin-right: 13px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.price_a a {
+	color: #FFF;
+}

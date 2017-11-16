@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-	<display-name>AMG_Mall</display-name>
-	<welcome-file-list>
-    	<welcome-file>index.html</welcome-file>
-    	<welcome-file>index.htm</welcome-file>
-    	<welcome-file>index.jsp</welcome-file>
-    	<welcome-file>default.html</welcome-file>
-    	<welcome-file>default.htm</welcome-file>
-    	<welcome-file>default.jsp</welcome-file>
+  <display-name>AMG_Mall</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <resource-ref>
+  	<res-ref-name>AMG_Mall</res-ref-name>
+  	<res-type>javax.sql.DataSource</res-type>
+  	<res-auth>Container</res-auth>
+  </resource-ref>
+  
+  <!-- 编码过滤器 -->
+  <filter>
+  	<filter-name>encoding</filter-name>
+  	<filter-class>com.hafele.util.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>encoding</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- session监控 -->
+  <listener>
+  	<listener-class>com.hafele.util.SessionListener</listener-class>
+  </listener>
+  
+  <!-- 首页 -->
+  <servlet>
+  	<servlet-name>indexServlet</servlet-name>
+  	<servlet-class>com.hafele.servlet.IndexServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>indexServlet</servlet-name>
+  	<url-pattern>/indexServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

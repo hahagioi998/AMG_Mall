@@ -1,0 +1,280 @@
+@charset "utf-8";
+/* CSS Document */
+.menu_bg {
+	width: 100%;
+	min-width: 1200px;
+	height: 43px;
+	border-bottom: 2px solid #ff4e00;
+}
+
+.menu {
+	width: 1200px;
+	height: 43px;
+	line-height: 43px;
+	color: #3e3e3e;
+	font-size: 16px;
+	position: relative;
+	z-index: 800;
+}
+
+ul.menu_r {
+	width: 720px;
+	height: 40px;
+	overflow: hidden;
+	float: left;
+	display: inline;
+	margin-left: 211px;
+}
+
+ul.menu_r li {
+	width: 70px;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	text-align: center;
+	float: left;
+	display: inline;
+	margin-right: 10px;
+}
+
+ul.menu_r li a {
+	width: 70px;
+	height: 40px;
+	overflow: hidden;
+	float: left;
+	color: #3e3e3e;
+}
+
+ul.menu_r li a:hover, ul.menu_r li a.now {
+	color: #ff4e00;
+}
+
+.m_ad {
+	width: 260px;
+	height: 43px;
+	line-height: 40px;
+	overflow: hidden;
+	color: #ff3600;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: right;
+	float: right;
+}
+
+.nav {
+	width: 211px;
+	height: 45px;
+	background-color: #ff3200;
+	position: absolute;
+	left: 0px;
+	top: 0;
+}
+
+.nav_t {
+	width: 211px;
+	height: 43px;
+	line-height: 43px;
+	overflow: hidden;
+	color: #FFF;
+	font-size: 16px;
+	text-indent: 35px;
+}
+
+.leftNav {
+	width: 211px;
+	height: 412px;
+	background-color: #ff4e00;
+	position: absolute;
+	left: 0;
+	top: 44px;
+}
+
+.none {
+	display: none;
+}
+
+.leftNav ul li {
+	height: 40px;
+	line-height: 40px;
+	background: url(../images/n_arrow.gif) no-repeat 195px center;
+	color: #FFF;
+	font-size: 14px;
+	margin-left: 1px;
+	cursor: pointer;
+	position: relative;
+}
+
+.leftNav ul li .n_img {
+	width: 20px;
+	height: 21px;
+	overflow: hidden;
+	text-align: center;
+	float: left;
+	display: inline;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.leftNav ul li .n_img span {
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.leftNav ul li .n_img img {
+	vertical-align: middle;
+}
+/*.leftNav ul li a{ color:#6e6e6e; }
+.leftNav ul li a:hover{ color:#e02d02; }*/
+.leftNav ul li ul {
+	width: 220px;
+	min-height: 70px;
+	overflow: hidden;
+	background: url(../images/nav_bg.png) repeat center top;
+	position: absolute;
+	left: 196px;
+	top: 0px;
+	border: 1px solid #d4d2d2;
+	border-left: 0px;
+	z-index: 900;
+	display: none;
+}
+
+.leftNav ul li ul li {
+	width: 195px;
+	height: auto;
+	line-height: 25px;
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: normal;
+	background: none;
+	margin: 10px auto;
+	padding: 0px 0px 5px 0px;
+	border-bottom: 1px dashed #d1d0d1;
+}
+
+.leftNav ul li ul li a {
+	color: #989797;
+	margin: 0px 10px;
+}
+
+.leftNav ul li ul li a:hover {
+	color: #e02d02;
+}
+
+.leftNav ul li ul li .n_t {
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	text-align: center;
+	font-weight: bold;
+	float: left;
+}
+
+.leftNav ul li ul li .n_c {
+	width: 142px;
+	overflow: hidden;
+	float: left;
+}
+
+.leftNav ul li ul li .n_c a {
+	width: 60px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	float: left;
+	display: inline-block;
+	margin: 0px 0px 0px 10px;
+}
+
+.leftNav ul li .fj {
+	width: 210px;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 901;
+}
+
+.leftNav ul li .fj.nuw {
+	width: 211px;
+	text-decoration: none;
+	height: 40px;
+	line-height: 40px;
+	background-color: #FFF;
+	color: #ff4e00;
+	z-index: 800px;
+}
+
+.leftNav .zj {
+	width: 989px;
+	height: 411px;
+	overflow: hidden;
+	background-color: #FFF;
+	position: absolute;
+	left: 210px;
+	top: 0;
+	display: none;
+}
+
+.leftNav .zj .zj_l {
+	width: 685px;
+	height: 385px;
+	overflow: hidden;
+	float: left;
+	display: inline;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+
+.leftNav .zj .zj_l_c {
+	width: 280px;
+	height: 108px;
+	line-height: 25px;
+	overflow: hidden;
+	color: #dbdbdb;
+	float: left;
+	display: inline;
+	margin-right: 50px;
+	margin-bottom: 25px;
+}
+
+.leftNav .zj .zj_l_c h2 {
+	height: 25px;
+	line-height: 25px;
+	color: #3e3e3e;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+
+.leftNav .zj .zj_l_c a {
+	line-height: 22px;
+	font-size: 12px;
+	font-family: "宋体";
+	padding: 0 10px;
+	margin: 0;
+}
+
+.leftNav .zj .zj_r {
+	width: 236px;
+	height: 402px;
+	overflow: hidden;
+	float: right;
+	display: inline;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+.leftNav .zj .zj_r img {
+	width: 236px;
+	height: 200px;
+	display: block;
+	margin-bottom: 1px;
+}
