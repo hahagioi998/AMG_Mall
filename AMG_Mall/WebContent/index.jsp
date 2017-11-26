@@ -16,7 +16,9 @@
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页_爱码购</title>
+<title>爱码购商城</title>
+
+<link rel="icon" href="images/title_icon.png" type="image/x-icon"/>  
 
 <link href="css/common.css" rel="stylesheet" />
 <link href="css/top.css" rel="stylesheet" />
@@ -39,6 +41,7 @@
 <script type="text/javascript" src="js/hban.js"></script>
 <script type="text/javascript" src="js/tban.js"></script>
 <script type="text/javascript" src="js/lrscroll_1.js"></script>
+
 </head>
 <body>
 	<%@ include file="jsps/top.jsp"%>
