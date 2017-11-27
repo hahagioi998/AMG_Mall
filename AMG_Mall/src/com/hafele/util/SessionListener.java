@@ -20,7 +20,7 @@ public class SessionListener implements HttpSessionListener {
 		// TODO 自动生成的方法存根
 		System.out.println("创建了session对象");
 		HashMap<String, GoodsBean> shoppingCart = new HashMap<String, GoodsBean>();
-		arg0.getSession().setAttribute("shoppingCart", shoppingCart);//gwc
+		arg0.getSession().setAttribute("shoppingCart", shoppingCart);
 		
 	}
 

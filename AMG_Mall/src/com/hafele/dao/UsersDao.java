@@ -17,7 +17,7 @@ public class UsersDao {
 
 	/**
 	 * 查询总行数
-	 * @return
+	 * @return i
 	 */
 	@SuppressWarnings("unused")
 	public static int count(String sql) {
@@ -50,7 +50,7 @@ public class UsersDao {
 	/**
 	 * 添加买家用户
 	 * @param u
-	 * @return
+	 * @return i
 	 */
 	public static int adduser(UserBean u){
 		String sql = "insert into t_user (userName,password)values(?,?)";
@@ -73,5 +73,63 @@ public class UsersDao {
 			}
 		}
 		return i;
+	}
+
+	/**
+	 * 用户登录
+	 * @param username
+	 * @return password
+	 * */
+	public static String login(String username) {
+		String sql = "select * from t_user where userName=?";
+		Connection con = Conn.getCon();
+		PreparedStatement ps = null;
+		String password = null;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, username);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()){
+			password = rs.getString("password");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return password;
+	}
+
+	/**
+	 * 获取用户ID
+	 * @param username
+	 * @return id
+	 * */
+	public static int nameIsId(String username) {
+		String sql = "select id from t_user where userName=?";
+		Connection con = Conn.getCon();
+		PreparedStatement ps = null;
+		int id = 0;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, username);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()){
+			id = rs.getInt("id");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return id;
 	}
 }
