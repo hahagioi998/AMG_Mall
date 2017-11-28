@@ -82,60 +82,59 @@
 			<span class="fr"> <span class="fl">你好，请<a
 					href="login.jsp">登录</a>&nbsp; <a href="regist.jsp"
 					style="color: #ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|
-			</span> 
-		</c:if> 
+			</span>
+		</c:if>
 		<c:if test="${username != null }">
-			<span class="fr"> <span class="fl">Hi,<a
-					href="#">${username}</a>&nbsp; <a href="logout.user"
-					style="color: #ff4e00;">退出</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|
-			</span> 
-		</c:if> 
+			<span class="fr"> <span class="fl">Hi,<a href="#">${username}</a>&nbsp;
+					<a href="logout.user" style="color: #ff4e00;">退出</a>&nbsp;|&nbsp;<a
+					href="#">我的订单</a>&nbsp;|
+			</span>
+		</c:if>
 		<span class="ss">
-				<div class="ss_list">
-					<a href="#">收藏夹</a>
-					<div class="ss_list_bg">
-						<div class="s_city_t"></div>
-						<div class="ss_list_c">
-							<ul>
-								<li><a href="#">收藏的店铺</a></li>
-								<li><a href="#">收藏的宝贝</a></li>
-							</ul>
-						</div>
+			<div class="ss_list">
+				<a href="#">收藏夹</a>
+				<div class="ss_list_bg">
+					<div class="s_city_t"></div>
+					<div class="ss_list_c">
+						<ul>
+							<li><a href="#">收藏的店铺</a></li>
+							<li><a href="#">收藏的宝贝</a></li>
+						</ul>
 					</div>
 				</div>
-				<div class="ss_list">
-					<a href="#">客户服务</a>
-					<div class="ss_list_bg">
-						<div class="s_city_t"></div>
-						<div class="ss_list_c">
-							<ul>
-								<li><a href="#">帮助中心</a></li>
-								<li><a href="#">售后服务</a></li>
-								<li><a href="#">在线客服</a></li>
-								<li><a href="#">意见建议</a></li>
-								<li><a href="#">电话客服</a></li>
-								<li><a href="#">客服邮箱</a></li>
-							</ul>
-						</div>
+			</div>
+			<div class="ss_list">
+				<a href="#">客户服务</a>
+				<div class="ss_list_bg">
+					<div class="s_city_t"></div>
+					<div class="ss_list_c">
+						<ul>
+							<li><a href="#">帮助中心</a></li>
+							<li><a href="#">售后服务</a></li>
+							<li><a href="#">在线客服</a></li>
+							<li><a href="#">意见建议</a></li>
+							<li><a href="#">电话客服</a></li>
+							<li><a href="#">客服邮箱</a></li>
+						</ul>
 					</div>
 				</div>
-				<div class="ss_list">
-					<a href="#">网站导航</a>
-					<div class="ss_list_bg">
-						<div class="s_city_t"></div>
-						<div class="ss_list_c">
-							<ul>
-								<li><a href="#">网站导航</a></li>
-								<li><a href="#">网站导航</a></li>
-							</ul>
-						</div>
+			</div>
+			<div class="ss_list">
+				<a href="#">网站导航</a>
+				<div class="ss_list_bg">
+					<div class="s_city_t"></div>
+					<div class="ss_list_c">
+						<ul>
+							<li><a href="#">网站导航</a></li>
+							<li><a href="#">网站导航</a></li>
+						</ul>
 					</div>
 				</div>
+			</div>
 		</span> <span class="fl">|&nbsp;关注我们：</span> <span class="s_sh"><a
-				href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span> <span
+			href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span> <span
 			class="fr">|&nbsp;<a href="#">手机版&nbsp;<img
-					src="images/s_tel.png" align="absmiddle" /></a></span>
-		</span>
+				src="images/s_tel.png" align="absmiddle" /></a></span> </span>
 	</div>
 </div>
 <div class="top">
@@ -152,56 +151,50 @@
 	</div>
 	<div class="i_car">
 		<div class="car_t">
-			购物车 [ <span>3</span> ]
+			<a rel="nofollow" href="index.cart" class="shopping_cart"
+				id="shopping_cart" style="display:"> 购物车 [ <span>3</span> ]
+			</a>
 		</div>
 		<div class="car_bg">
 			<!--Begin 购物车未登录 Begin-->
-			<div class="un_login">
-				还未登录！<a href="Login.html" style="color: #ff4e00;">马上登录</a> 查看购物车！
-			</div>
+			<c:if test="${username == null }">
+				<div class="un_login">
+					还未登录！<a href="login.jsp" style="color: #ff4e00;">马上登录</a> 查看购物车！
+				</div>
+			</c:if>
 			<!--End 购物车未登录 End-->
 			<!--Begin 购物车已登录 Begin-->
-			<ul class="cars">
-				<li>
-					<div class="img">
-						<a href="#"><img src="images/car1.jpg" width="58" height="58" /></a>
+			<c:if test="${username != null }">
+				<ul class="cars">
+					<!-- 查询购物车 -->
+					<c:forEach items="${shoppingCartGoodsList }" var="g">
+						<li>
+							<div class="img">
+								<a href="GoodsPageServlet?id=${g.id }"><img
+									src="${g.proPic }" width="58" height="58" /></a>
+							</div>
+							<div class="name">
+								<a href="GoodsPageServlet?id=${g.id }">${g.name }</a>
+							</div>
+							<div class="price">
+								<font color="#ff4e00">￥ ${g.price }<span class="${g.id }">*${g.num }</span></font>
+							</div>
+						</li>
+					</c:forEach>
+					<c:if test="${shoppingCartGoodsList.size()==0 }">
+						<p class="sc_goods_none">您的购物车还是空的，赶紧行动吧！</p>
+					</c:if>
+				</ul>
+				<div
+					<c:if test="${shoppingCartGoodsList.size()==0 }">style="display:none;"</c:if>>
+					<div class="price_sum">
+						共计&nbsp; <font color="#ff4e00">￥</font><span class="sum" id="total">0.00</span>
 					</div>
-					<div class="name">
-						<a href="#">法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只</a>
+					<div class="price_a">
+						<a href="#">去购物车结算</a>
 					</div>
-					<div class="price">
-						<font color="#ff4e00">￥399</font> X1
-					</div>
-				</li>
-				<li>
-					<div class="img">
-						<a href="#"><img src="images/car2.jpg" width="58" height="58" /></a>
-					</div>
-					<div class="name">
-						<a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a>
-					</div>
-					<div class="price">
-						<font color="#ff4e00">￥399</font> X1
-					</div>
-				</li>
-				<li>
-					<div class="img">
-						<a href="#"><img src="images/car2.jpg" width="58" height="58" /></a>
-					</div>
-					<div class="name">
-						<a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a>
-					</div>
-					<div class="price">
-						<font color="#ff4e00">￥399</font> X1
-					</div>
-				</li>
-			</ul>
-			<div class="price_sum">
-				共计&nbsp; <font color="#ff4e00">￥</font><span>1058</span>
-			</div>
-			<div class="price_a">
-				<a href="#">去购物车结算</a>
-			</div>
+				</div>
+			</c:if>
 			<!--End 购物车已登录 End-->
 		</div>
 	</div>

@@ -1,7 +1,8 @@
+<%@page import="com.hafele.bean.GoodsBean"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-	if (request.getAttribute("shoppingCartGoodsList") == null) {//gwcGoodsList
+	if (request.getAttribute("shoppingCartGoodsList") == null) {
 		pageContext.forward("indexServlet");
 	}
 %>

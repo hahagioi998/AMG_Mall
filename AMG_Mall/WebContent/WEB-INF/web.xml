@@ -42,10 +42,23 @@
     <servlet-name>GenImageServlet</servlet-name>
     <servlet-class>com.hafele.util.SecurityCode</servlet-class>
   </servlet>
+  
+  <!--  -->
+  <servlet>
+    <servlet-name>GoodsPageServlet</servlet-name>
+    <servlet-class>com.hafele.servlet.GoodsPageServlet</servlet-class>
+  </servlet>
+  
   <!-- 首页 -->
   <servlet>
   	<servlet-name>indexServlet</servlet-name>
   	<servlet-class>com.hafele.servlet.IndexServlet</servlet-class>
+  </servlet>
+  
+  <!-- 购物车 -->
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>com.hafele.servlet.CartServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -57,6 +70,13 @@
   	<servlet-name>indexServlet</servlet-name>
   	<url-pattern>/indexServlet</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+    <servlet-name>GoodsPageServlet</servlet-name>
+    <url-pattern>/GoodsPageServlet</url-pattern>
+  </servlet-mapping> 
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>*.cart</url-pattern>
+  </servlet-mapping>
   
 </web-app>
