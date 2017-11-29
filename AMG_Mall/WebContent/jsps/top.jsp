@@ -168,7 +168,7 @@
 				<ul class="cars">
 					<!-- 查询购物车 -->
 					<c:forEach items="${shoppingCartGoodsList }" var="g">
-						<li>
+						<li id="list" value="${g.id }">
 							<div class="img">
 								<a href="GoodsPageServlet?id=${g.id }"><img
 									src="${g.proPic }" width="58" height="58" /></a>
@@ -177,7 +177,8 @@
 								<a href="GoodsPageServlet?id=${g.id }">${g.name }</a>
 							</div>
 							<div class="price">
-								<font color="#ff4e00">￥ ${g.price }<span class="${g.id }">*${g.num }</span></font>
+								<font color="#ff4e00">￥ <span id="${g.id }Subtotal">${g.price }</span><span>&nbsp;*&nbsp;</span><span
+									class="${g.id }" id="${g.id }num">${g.num }</span></font>
 							</div>
 						</li>
 					</c:forEach>
@@ -188,10 +189,11 @@
 				<div
 					<c:if test="${shoppingCartGoodsList.size()==0 }">style="display:none;"</c:if>>
 					<div class="price_sum">
-						共计&nbsp; <font color="#ff4e00">￥</font><span class="sum" id="total">0.00</span>
+						共计&nbsp; <font color="#ff4e00">￥</font><span class="sum"
+							id="total">0.00</span>
 					</div>
 					<div class="price_a">
-						<a href="#">去购物车结算</a>
+						<a href="index.cart">去购物车结算</a>
 					</div>
 				</div>
 			</c:if>
@@ -200,3 +202,43 @@
 	</div>
 </div>
 <!--End 头部代码（最顶部、logo、搜索、导航菜单） End-->
+<script type="text/javascript">
+	$(function() {
+		var total = 0;
+		/*
+		1. 获取所有的商品！循环遍历之
+		 */
+		$("li").each(function() {
+			//2. 获取商品的值，即其他元素的前缀
+			var id = $(this).val();
+			//3. 再通过前缀找到小计元素，获取其文本
+			var text = $("#" + id + "Subtotal").text();
+			//找到数量
+			var num = $("#" + id + "num").text();
+
+			//4. 累加计算
+			total += text * num;
+		});
+		// 5. 把总计显示在总计元素上
+		$("#total").text(round(total, 2));//round()函数的作用是把total保留2位
+	});
+	function round(num, dec) {
+		var strNum = num + '';/*把要转换的小数转换成字符串*/
+		var index = strNum.indexOf("."); /*获取小数点的位置*/
+		if (index < 0) {
+			return num;/*如果没有小数点，那么无需四舍五入，返回这个整数*/
+		}
+		var n = strNum.length - index - 1;/*获取当前浮点数，小数点后的位数*/
+		if (dec < n) {
+			/*把小数点向后移动要保留的位数，把需要保留的小数部分变成整数部分，只留下不需要保留的部分为小数*/
+			var e = Math.pow(10, dec);
+			num = num * e;
+			/*进行四舍五入，只保留整数部分*/
+			num = Math.round(num);
+			/*再把原来小数部分还原为小数*/
+			return num / e;
+		} else {
+			return num;/*如果当前小数点后的位数等于或小于要保留的位数，那么无需处理，直接返回*/
+		}
+	}
+</script>
