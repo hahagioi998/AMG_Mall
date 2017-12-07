@@ -37,12 +37,12 @@
 <script type="text/javascript" src="js/select.js"></script>
 <script type="text/javascript" src="js/lrscroll.js"></script>
 <script type="text/javascript" src="js/iban.js"></script>
-<script type="text/javascript" src="js/fban.js"></script>
-<script type="text/javascript" src="js/f_ban.js"></script>
-<script type="text/javascript" src="js/mban.js"></script>
-<script type="text/javascript" src="js/bban.js"></script>
-<script type="text/javascript" src="js/hban.js"></script>
-<script type="text/javascript" src="js/tban.js"></script>
+<script type="text/javascript" src="js/one_floor.js"></script>
+<script type="text/javascript" src="js/two_floor.js"></script>
+<script type="text/javascript" src="js/third_floor.js"></script>
+<script type="text/javascript" src="js/four_floor.js"></script>
+<script type="text/javascript" src="js/five_floor.js"></script>
+<script type="text/javascript" src="js/six_floor.js"></script>
 <script type="text/javascript" src="js/lrscroll_1.js"></script>
 
 </head>
