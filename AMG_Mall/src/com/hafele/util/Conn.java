@@ -17,7 +17,7 @@ public class Conn {
 		Connection con= null;
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;DatabaseName=zhaiShop","sa","hafele");
+			con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;DatabaseName=db_AMG-Mall","sa","hafele");
 			System.out.println(con);
 		} catch (ClassNotFoundException e) {
 			// TODO 自动生成的 catch 块

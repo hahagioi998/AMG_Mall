@@ -168,4 +168,41 @@ public class GoodsDao {
 				return goods;
 	}
 
+	/**
+	 * 根据大类id查询 返回前六个商品  按最新发布
+	 * @param sql
+	 * @return
+	 */
+	public static List<GoodsBean> bigTypeIdSel(int bigTypeId) {
+		String sql = "select top 6 id,name,price,proPic from t_goods where bigTypeId="+bigTypeId+"  order by id desc";
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		List<GoodsBean> list = new ArrayList<GoodsBean>();
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				int id = rs.getInt("id");
+				String name = rs.getString("name");
+				double price = rs.getDouble("price");
+				String proPic = rs.getString("proPic");
+				System.out.println("id="+id+"    name="+name+"    price="+price+"    proPic="+proPic);
+				GoodsBean g = new  GoodsBean(id, name, price, proPic);
+				list.add(g);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}
+
 }

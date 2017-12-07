@@ -947,9 +947,9 @@
 	transform: scale(1.1, 1.1);
 }
 
-/*---------------首页（进口 生鲜）---------------*/
+/*---------------首页（1F）---------------*/
 .floor_num {
-	width: 33px;
+	width: 38px;
 	height: 34px;
 	line-height: 40px;
 	overflow: hidden;
@@ -963,7 +963,7 @@
 	margin-right: 15px;
 }
 
-.fresh_left {
+.ban1_left {
 	width: 211px;
 	height: 441px;
 	overflow: hidden;
@@ -971,13 +971,13 @@
 	float: left;
 }
 
-.fre_ban {
+.ban1 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
 }
 
-.fre_ban #imgPlay1 {
+.ban1 #imgPlay1 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
@@ -986,22 +986,22 @@
 	position: relative;
 }
 
-.fre_ban #imgPlay .imgs img {
+.ban1 #imgPlay .imgs img {
 	width: 211px;
 }
 
-.fre_ban #imgPlay1 .imgs li {
+.ban1 #imgPlay1 .imgs li {
 	position: relative;
 	float: left;
 	width: 211px;
 	height: 286px;
 }
 
-.fre_ban #imgPlay1 .imgs {
+.ban1 #imgPlay1 .imgs {
 	width: 5760px;
 }
 
-.fre_ban #imgPlay1 .btn {
+.ban1 #imgPlay1 .btn {
 	width: 112px;
 	height: 29px;
 	overflow: hidden;
@@ -1011,7 +1011,7 @@
 	bottom: 12px;
 }
 
-.fre_ban #imgPlay1 .btn a {
+.ban1 #imgPlay1 .btn a {
 	width: 46px;
 	height: 71px;
 	overflow: hidden;
@@ -1019,11 +1019,11 @@
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.fre_ban #imgPlay1 .btn a:hover {
+.ban1 #imgPlay1 .btn a:hover {
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.fre_ban .prevf {
+.ban1 .prev1 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1035,7 +1035,7 @@
 	top: 123px;
 }
 
-.fre_ban .nextf {
+.ban1 .next1 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1149,8 +1149,8 @@
 	border-bottom: 1px solid #eaeaea;
 }
 
-/*---------------首页（食品饮料）---------------*/
-.food_left {
+/*---------------首页（2F）---------------*/
+.ban2_left {
 	width: 211px;
 	height: 441px;
 	overflow: hidden;
@@ -1158,13 +1158,13 @@
 	float: left;
 }
 
-.food_ban {
+.ban2 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
 }
 
-.food_ban #imgPlay2 {
+.ban2 #imgPlay2 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
@@ -1173,22 +1173,22 @@
 	position: relative;
 }
 
-.food_ban #imgPlay2 .imgs img {
+.ban2 #imgPlay2 .imgs img {
 	width: 211px;
 }
 
-.food_ban #imgPlay2 .imgs li {
+.ban2 #imgPlay2 .imgs li {
 	position: relative;
 	float: left;
 	width: 211px;
 	height: 286px;
 }
 
-.food_ban #imgPlay2 .imgs {
+.ban2 #imgPlay2 .imgs {
 	width: 5760px;
 }
 
-.food_ban #imgPlay2 .btn {
+.ban2 #imgPlay2 .btn {
 	width: 112px;
 	height: 29px;
 	overflow: hidden;
@@ -1198,7 +1198,7 @@
 	bottom: 12px;
 }
 
-.food_ban #imgPlay2 .btn a {
+.ban2 #imgPlay2 .btn a {
 	width: 46px;
 	height: 71px;
 	overflow: hidden;
@@ -1206,11 +1206,11 @@
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.food_ban #imgPlay2 .btn a:hover {
+.ban2 #imgPlay2 .btn a:hover {
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.food_ban .prev_f {
+.ban2 .prev2 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1222,7 +1222,7 @@
 	top: 123px;
 }
 
-.food_ban .next_f {
+.ban2 .next2 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1234,8 +1234,8 @@
 	top: 123px;
 }
 
-/*---------------首页（个人美妆）---------------*/
-.make_left {
+/*---------------首页（3F）---------------*/
+.ban3_left {
 	width: 211px;
 	height: 441px;
 	overflow: hidden;
@@ -1243,13 +1243,13 @@
 	float: left;
 }
 
-.make_ban {
+.ban3 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
 }
 
-.make_ban #imgPlay3 {
+.ban3 #imgPlay3 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
@@ -1258,22 +1258,22 @@
 	position: relative;
 }
 
-.make_ban #imgPlay3 .imgs img {
+.ban3 #imgPlay3 .imgs img {
 	width: 211px;
 }
 
-.make_ban #imgPlay3 .imgs li {
+.ban3 #imgPlay3 .imgs li {
 	position: relative;
 	float: left;
 	width: 211px;
 	height: 286px;
 }
 
-.make_ban #imgPlay3 .imgs {
+.ban3 #imgPlay3 .imgs {
 	width: 5760px;
 }
 
-.make_ban #imgPlay3 .btn {
+.ban3 #imgPlay3 .btn {
 	width: 112px;
 	height: 29px;
 	overflow: hidden;
@@ -1283,7 +1283,7 @@
 	bottom: 12px;
 }
 
-.make_ban #imgPlay3 .btn a {
+.ban3 #imgPlay3 .btn a {
 	width: 46px;
 	height: 71px;
 	overflow: hidden;
@@ -1291,11 +1291,11 @@
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.make_ban #imgPlay3 .btn a:hover {
+.ban3 #imgPlay3 .btn a:hover {
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.make_ban .prev_m {
+.ban3 .prev3 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1307,7 +1307,7 @@
 	top: 123px;
 }
 
-.make_ban .next_m {
+.ban3 .next3 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1319,8 +1319,8 @@
 	top: 123px;
 }
 
-/*---------------首页（母婴玩具）---------------*/
-.baby_left {
+/*---------------首页（4F）---------------*/
+.ban4_left {
 	width: 211px;
 	height: 441px;
 	overflow: hidden;
@@ -1328,13 +1328,13 @@
 	float: left;
 }
 
-.baby_ban {
+.ban4 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
 }
 
-.baby_ban #imgPlay4 {
+.ban4 #imgPlay4 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
@@ -1343,22 +1343,22 @@
 	position: relative;
 }
 
-.baby_ban #imgPlay4 .imgs img {
+.ban4 #imgPlay4 .imgs img {
 	width: 211px;
 }
 
-.baby_ban #imgPlay4 .imgs li {
+.ban4 #imgPlay4 .imgs li {
 	position: relative;
 	float: left;
 	width: 211px;
 	height: 286px;
 }
 
-.baby_ban #imgPlay4 .imgs {
+.ban4 #imgPlay4 .imgs {
 	width: 5760px;
 }
 
-.baby_ban #imgPlay4 .btn {
+.ban4 #imgPlay4 .btn {
 	width: 112px;
 	height: 29px;
 	overflow: hidden;
@@ -1368,7 +1368,7 @@
 	bottom: 12px;
 }
 
-.baby_ban #imgPlay4 .btn a {
+.ban4 #imgPlay4 .btn a {
 	width: 46px;
 	height: 71px;
 	overflow: hidden;
@@ -1376,11 +1376,11 @@
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.baby_ban #imgPlay4 .btn a:hover {
+.ban4 #imgPlay4 .btn a:hover {
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.baby_ban .prev_b {
+.ban4 .prev4 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1392,7 +1392,7 @@
 	top: 123px;
 }
 
-.baby_ban .next_b {
+.ban4 .next4 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1404,8 +1404,8 @@
 	top: 123px;
 }
 
-/*---------------首页（家居生活）---------------*/
-.home_left {
+/*---------------首页（5F）---------------*/
+.ban5_left {
 	width: 211px;
 	height: 441px;
 	overflow: hidden;
@@ -1413,13 +1413,13 @@
 	float: left;
 }
 
-.home_ban {
+.ban5 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
 }
 
-.home_ban #imgPlay5 {
+.ban5 #imgPlay5 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
@@ -1428,22 +1428,22 @@
 	position: relative;
 }
 
-.home_ban #imgPlay5 .imgs img {
+.ban5 #imgPlay5 .imgs img {
 	width: 211px;
 }
 
-.home_ban #imgPlay5 .imgs li {
+.ban5 #imgPlay5 .imgs li {
 	position: relative;
 	float: left;
 	width: 211px;
 	height: 286px;
 }
 
-.home_ban #imgPlay5 .imgs {
+.ban5 #imgPlay5 .imgs {
 	width: 5760px;
 }
 
-.home_ban #imgPlay5 .btn {
+.ban5 #imgPlay5 .btn {
 	width: 112px;
 	height: 29px;
 	overflow: hidden;
@@ -1453,7 +1453,7 @@
 	bottom: 12px;
 }
 
-.home_ban #imgPlay5 .btn a {
+.ban5 #imgPlay5 .btn a {
 	width: 46px;
 	height: 71px;
 	overflow: hidden;
@@ -1461,11 +1461,11 @@
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.home_ban #imgPlay5 .btn a:hover {
+.ban5 #imgPlay5 .btn a:hover {
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.home_ban .prev_h {
+.ban5 .prev5 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1477,7 +1477,7 @@
 	top: 123px;
 }
 
-.home_ban .next_h {
+.ban5 .next5 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1489,8 +1489,8 @@
 	top: 123px;
 }
 
-/*---------------首页（数码家电）---------------*/
-.tel_left {
+/*---------------首页（6F）---------------*/
+.ban6_left {
 	width: 211px;
 	height: 441px;
 	overflow: hidden;
@@ -1498,13 +1498,13 @@
 	float: left;
 }
 
-.tel_ban {
+.ban6 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
 }
 
-.tel_ban #imgPlay6 {
+.ban6 #imgPlay6 {
 	width: 211px;
 	height: 286px;
 	overflow: hidden;
@@ -1513,22 +1513,22 @@
 	position: relative;
 }
 
-.tel_ban #imgPlay6 .imgs img {
+.ban6 #imgPlay6 .imgs img {
 	width: 211px;
 }
 
-.tel_ban #imgPlay6 .imgs li {
+.ban6 #imgPlay6 .imgs li {
 	position: relative;
 	float: left;
 	width: 211px;
 	height: 286px;
 }
 
-.tel_ban #imgPlay6 .imgs {
+.ban6 #imgPlay6 .imgs {
 	width: 5760px;
 }
 
-.tel_ban #imgPlay6 .btn {
+.ban6 #imgPlay6 .btn {
 	width: 112px;
 	height: 29px;
 	overflow: hidden;
@@ -1538,7 +1538,7 @@
 	bottom: 12px;
 }
 
-.tel_ban #imgPlay6 .btn a {
+.ban6 #imgPlay6 .btn a {
 	width: 46px;
 	height: 71px;
 	overflow: hidden;
@@ -1546,11 +1546,11 @@
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.tel_ban #imgPlay6 .btn a:hover {
+.ban6 #imgPlay6 .btn a:hover {
 	background: url(../images/b_left.png) no-repeat;
 }
 
-.tel_ban .prev_t {
+.ban6 .prev6 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;
@@ -1562,7 +1562,347 @@
 	top: 123px;
 }
 
-.tel_ban .next_t {
+.ban6 .next6 {
+	width: 20px;
+	height: 40px;
+	overflow: hidden;
+	background: url(../images/s_right.png) no-repeat;
+	cursor: pointer;
+	text-indent: -9999px;
+	position: absolute;
+	right: 0;
+	top: 123px;
+}
+
+/*---------------首页（7F）---------------*/
+.ban7_left {
+	width: 211px;
+	height: 441px;
+	overflow: hidden;
+	background-color: #b2e7ef;
+	float: left;
+}
+
+.ban7 {
+	width: 211px;
+	height: 286px;
+	overflow: hidden;
+}
+
+.ban7 #imgPlay7 {
+	width: 211px;
+	height: 286px;
+	overflow: hidden;
+	margin: 0 auto;
+	zoom: 1;
+	position: relative;
+}
+
+.ban7 #imgPlay7 .imgs img {
+	width: 211px;
+}
+
+.ban7 #imgPlay7 .imgs li {
+	position: relative;
+	float: left;
+	width: 211px;
+	height: 286px;
+}
+
+.ban7 #imgPlay7 .imgs {
+	width: 5760px;
+}
+
+.ban7 #imgPlay7 .btn {
+	width: 112px;
+	height: 29px;
+	overflow: hidden;
+	text-indent: -9999px;
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+}
+
+.ban7 #imgPlay7 .btn a {
+	width: 46px;
+	height: 71px;
+	overflow: hidden;
+	display: block;
+	background: url(../images/b_left.png) no-repeat;
+}
+
+.ban7 #imgPlay7 .btn a:hover {
+	background: url(../images/b_left.png) no-repeat;
+}
+
+.ban7 .prev7 {
+	width: 20px;
+	height: 40px;
+	overflow: hidden;
+	background: url(../images/s_left.png) no-repeat;
+	cursor: pointer;
+	text-indent: -9999px;
+	position: absolute;
+	left: 0;
+	top: 123px;
+}
+
+.ban7 .next7 {
+	width: 20px;
+	height: 40px;
+	overflow: hidden;
+	background: url(../images/s_right.png) no-repeat;
+	cursor: pointer;
+	text-indent: -9999px;
+	position: absolute;
+	right: 0;
+	top: 123px;
+}
+
+/*---------------首页（8F）---------------*/
+.ban8_left {
+	width: 211px;
+	height: 441px;
+	overflow: hidden;
+	background-color: #b2e7ef;
+	float: left;
+}
+
+.ban8 {
+	width: 211px;
+	height: 286px;
+	overflow: hidden;
+}
+
+.ban8 #imgPlay8 {
+	width: 211px;
+	height: 286px;
+	overflow: hidden;
+	margin: 0 auto;
+	zoom: 1;
+	position: relative;
+}
+
+.ban8 #imgPlay8 .imgs img {
+	width: 211px;
+}
+
+.ban8 #imgPlay8 .imgs li {
+	position: relative;
+	float: left;
+	width: 211px;
+	height: 286px;
+}
+
+.ban8 #imgPlay8 .imgs {
+	width: 5760px;
+}
+
+.ban8 #imgPlay8 .btn {
+	width: 112px;
+	height: 29px;
+	overflow: hidden;
+	text-indent: -9999px;
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+}
+
+.ban8 #imgPlay8 .btn a {
+	width: 46px;
+	height: 71px;
+	overflow: hidden;
+	display: block;
+	background: url(../images/b_left.png) no-repeat;
+}
+
+.ban8 #imgPlay8 .btn a:hover {
+	background: url(../images/b_left.png) no-repeat;
+}
+
+.ban8 .prev8 {
+	width: 20px;
+	height: 40px;
+	overflow: hidden;
+	background: url(../images/s_left.png) no-repeat;
+	cursor: pointer;
+	text-indent: -9999px;
+	position: absolute;
+	left: 0;
+	top: 123px;
+}
+
+.ban8 .next8 {
+	width: 20px;
+	height: 40px;
+	overflow: hidden;
+	background: url(../images/s_right.png) no-repeat;
+	cursor: pointer;
+	text-indent: -9999px;
+	position: absolute;
+	right: 0;
+	top: 123px;
+}
+
+/*---------------首页（9F）---------------*/
+.ban9_left {
+	width: 211px;
+	height: 441px;
+	overflow: hidden;
+	background-color: #b2e7ef;
+	float: left;
+}
+
+.ban9 {
+	width: 211px;
+	height: 286px;
+	overflow: hidden;
+}
+
+.ban9 #imgPlay9 {
+	width: 211px;
+	height: 286px;
+	overflow: hidden;
+	margin: 0 auto;
+	zoom: 1;
+	position: relative;
+}
+
+.ban9 #imgPlay9 .imgs img {
+	width: 211px;
+}
+
+.ban9 #imgPlay9 .imgs li {
+	position: relative;
+	float: left;
+	width: 211px;
+	height: 286px;
+}
+
+.ban9 #imgPlay9 .imgs {
+	width: 5760px;
+}
+
+.ban9 #imgPlay9 .btn {
+	width: 112px;
+	height: 29px;
+	overflow: hidden;
+	text-indent: -9999px;
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+}
+
+.ban9 #imgPlay9 .btn a {
+	width: 46px;
+	height: 71px;
+	overflow: hidden;
+	display: block;
+	background: url(../images/b_left.png) no-repeat;
+}
+
+.ban9 #imgPlay9 .btn a:hover {
+	background: url(../images/b_left.png) no-repeat;
+}
+
+.ban9 .prev9 {
+	width: 20px;
+	height: 40px;
+	overflow: hidden;
+	background: url(../images/s_left.png) no-repeat;
+	cursor: pointer;
+	text-indent: -9999px;
+	position: absolute;
+	left: 0;
+	top: 123px;
+}
+
+.ban9 .next9 {
+	width: 20px;
+	height: 40px;
+	overflow: hidden;
+	background: url(../images/s_right.png) no-repeat;
+	cursor: pointer;
+	text-indent: -9999px;
+	position: absolute;
+	right: 0;
+	top: 123px;
+}
+
+/*---------------首页（10F）---------------*/
+.ban10_left {
+	width: 211px;
+	height: 441px;
+	overflow: hidden;
+	background-color: #b2e7ef;
+	float: left;
+}
+
+.ban10 {
+	width: 211px;
+	height: 286px;
+	overflow: hidden;
+}
+
+.ban10 #imgPlay10 {
+	width: 211px;
+	height: 286px;
+	overflow: hidden;
+	margin: 0 auto;
+	zoom: 1;
+	position: relative;
+}
+
+.ban10 #imgPlay10 .imgs img {
+	width: 211px;
+}
+
+.ban10 #imgPlay10 .imgs li {
+	position: relative;
+	float: left;
+	width: 211px;
+	height: 286px;
+}
+
+.ban10 #imgPlay10 .imgs {
+	width: 5760px;
+}
+
+.ban10 #imgPlay10 .btn {
+	width: 112px;
+	height: 29px;
+	overflow: hidden;
+	text-indent: -9999px;
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+}
+
+.ban10 #imgPlay10 .btn a {
+	width: 46px;
+	height: 71px;
+	overflow: hidden;
+	display: block;
+	background: url(../images/b_left.png) no-repeat;
+}
+
+.ban10 #imgPlay10 .btn a:hover {
+	background: url(../images/b_left.png) no-repeat;
+}
+
+.ban10 .prev10 {
+	width: 20px;
+	height: 40px;
+	overflow: hidden;
+	background: url(../images/s_left.png) no-repeat;
+	cursor: pointer;
+	text-indent: -9999px;
+	position: absolute;
+	left: 0;
+	top: 123px;
+}
+
+.ban10 .next10 {
 	width: 20px;
 	height: 40px;
 	overflow: hidden;

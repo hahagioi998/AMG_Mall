@@ -182,10 +182,10 @@ jQuery(document).ready(function() {
 		ele = jq(ele) ? jq(ele) : ele;
 		ele.addClass(currentClass).siblings().removeClass(currentClass)
 	}
-	jq('.make_ban #imgPlay3 .next_m').click(function() {
+	jq('.ban3 #imgPlay3 .next3').click(function() {
 		slide(1)
 	});
-	jq('.make_ban #imgPlay3 .prev_m').click(function() {
+	jq('.ban3 #imgPlay3 .prev3').click(function() {
 		slide( - 1)
 	});
 	function slide(j) {
