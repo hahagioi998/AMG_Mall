@@ -804,12 +804,32 @@
 	transform: scale(1.1, 1.1);
 }
 
-.s_img {
+.s1_img {
 	width: 185px;
 	height: 155px;
 	overflow: hidden;
 	margin-top: 6px;
 }
+.s2_img {
+	width: 185px;
+	height: 155px;
+	overflow: hidden;
+	margin-top: 6px;
+}
+.s4_img {
+	width: 185px;
+	height: 155px;
+	overflow: hidden;
+	margin-top: 6px;
+}
+.s5_img {
+	width: 185px;
+	height: 155px;
+	overflow: hidden;
+	margin-top: 6px;
+}
+
+
 
 .s_price {
 	width: 100%;
@@ -869,7 +889,7 @@
 	transform: scale(1.1, 1.1);
 }
 
-.sell_b1 {
+.sell_3 {
 	width: 242px;
 	height: 356px;
 	overflow: hidden;
@@ -877,30 +897,6 @@
 	border-right: 1px solid #eaeaea;
 	position: absolute;
 	left: 244px;
-	top: 0;
-}
-
-.sell_b1:hover img {
-	-moz-transform: scale(1.1, 1.1);
-	-webkit-transform: scale(1.1, 1.1);
-	-o-transform: scale(1.1, 1.1);
-	-ms-transform: scale(1.1, 1.1);
-	transform: scale(1.1, 1.1);
-}
-
-.sb_img {
-	width: 242px;
-	height: 356px;
-	overflow: hidden;
-}
-
-.sell_3 {
-	width: 244px;
-	height: 178px;
-	overflow: hidden;
-	border-bottom: 1px solid #eaeaea;
-	position: absolute;
-	left: 488px;
 	top: 0;
 }
 
@@ -912,13 +908,25 @@
 	transform: scale(1.1, 1.1);
 }
 
+.s3_img {
+	width: 242px;
+	height: 356px;
+	overflow: hidden;
+}
+.s6_img {
+	width: 242px;
+	height: 356px;
+	overflow: hidden;
+}
+
 .sell_4 {
 	width: 244px;
 	height: 178px;
 	overflow: hidden;
+	border-bottom: 1px solid #eaeaea;
 	position: absolute;
 	left: 488px;
-	top: 178px;
+	top: 0;
 }
 
 .sell_4:hover img {
@@ -929,7 +937,24 @@
 	transform: scale(1.1, 1.1);
 }
 
-.sell_b2 {
+.sell_5 {
+	width: 244px;
+	height: 178px;
+	overflow: hidden;
+	position: absolute;
+	left: 488px;
+	top: 178px;
+}
+
+.sell_5:hover img {
+	-moz-transform: scale(1.1, 1.1);
+	-webkit-transform: scale(1.1, 1.1);
+	-o-transform: scale(1.1, 1.1);
+	-ms-transform: scale(1.1, 1.1);
+	transform: scale(1.1, 1.1);
+}
+
+.sell_6 {
 	width: 242px;
 	height: 356px;
 	overflow: hidden;
@@ -939,7 +964,7 @@
 	top: 0;
 }
 
-.sell_b2:hover img {
+.sell_6:hover img {
 	-moz-transform: scale(1.1, 1.1);
 	-webkit-transform: scale(1.1, 1.1);
 	-o-transform: scale(1.1, 1.1);

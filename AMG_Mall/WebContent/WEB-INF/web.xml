@@ -28,6 +28,11 @@
     <servlet-name>smallTypeServlet</servlet-name>
     <servlet-class>com.hafele.servlet.SmallTypeServlet</servlet-class>
   </servlet>
+  <!-- 商品细类 -->
+  <servlet>
+    <servlet-name>detailTypeServlet</servlet-name>
+    <servlet-class>com.hafele.servlet.DetailTypeServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
     <servlet-name>userList</servlet-name>
@@ -40,6 +45,10 @@
   <servlet-mapping>
     <servlet-name>smallTypeServlet</servlet-name>
     <url-pattern>*.small</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>detailTypeServlet</servlet-name>
+    <url-pattern>*.detail</url-pattern>
   </servlet-mapping>
   
   <!-- 编码过滤器 -->

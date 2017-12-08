@@ -1,6 +1,8 @@
 <%@page import="com.hafele.bean.GoodsBean"%>
 <%@page import="com.hafele.bean.SmallTypeBean"%>
 <%@page import="com.hafele.bean.BigTypeBean"%>
+<%@page import="com.hafele.bean.DetailTypeBean"%>
+
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
@@ -133,82 +135,29 @@
 						<div id="block">
 							<div id="botton-scroll">
 								<ul class="featureUL">
-									<li class="featureBox">
-										<div class="box">
-											<div class="h_icon">
-												<img src="images/hot.png" width="50" height="50" />
+									<c:forEach items="${hotList }" var="hot">
+										<li class="featureBox">
+											<div class="box">
+												<div class="h_icon">
+													<img src="images/hot.png" width="50" height="50" />
+												</div>
+												<div class="imgbg">
+													<a href="GoodsPageServlet?id=${hot.id }" target="_blank"
+														title="${hot.name }"><img src="${hot.proPic }"
+														width="160" height="136" /></a>
+												</div>
+												<div class="name">
+													<a href="GoodsPageServlet?id=${hot.id }" target="_blank"
+														title="${hot.name }">
+														<h2>${hot.name }</h2> 德亚全脂纯牛奶200ml*48盒
+													</a>
+												</div>
+												<div class="price">
+													<font>￥<span>${hot.price }</span></font> &nbsp; 26R
+												</div>
 											</div>
-											<div class="imgbg">
-												<a href="#"><img src="images/hot1.jpg" width="160"
-													height="136" /></a>
-											</div>
-											<div class="name">
-												<a href="#">
-													<h2>德国进口</h2> 德亚全脂纯牛奶200ml*48盒
-												</a>
-											</div>
-											<div class="price">
-												<font>￥<span>189</span></font> &nbsp; 26R
-											</div>
-										</div>
-									</li>
-									<li class="featureBox">
-										<div class="box">
-											<div class="h_icon">
-												<img src="images/hot.png" width="50" height="50" />
-											</div>
-											<div class="imgbg">
-												<a href="#"><img src="images/hot2.jpg" width="160"
-													height="136" /></a>
-											</div>
-											<div class="name">
-												<a href="#">
-													<h2>iphone 6S</h2> Apple/苹果 iPhone 6s Plus公开版
-												</a>
-											</div>
-											<div class="price">
-												<font>￥<span>5288</span></font> &nbsp; 25R
-											</div>
-										</div>
-									</li>
-									<li class="featureBox">
-										<div class="box">
-											<div class="h_icon">
-												<img src="images/hot.png" width="50" height="50" />
-											</div>
-											<div class="imgbg">
-												<a href="#"><img src="images/hot3.jpg" width="160"
-													height="136" /></a>
-											</div>
-											<div class="name">
-												<a href="#">
-													<h2>倩碧特惠组合套装</h2> 倩碧补水组合套装8折促销
-												</a>
-											</div>
-											<div class="price">
-												<font>￥<span>368</span></font> &nbsp; 18R
-											</div>
-										</div>
-									</li>
-									<li class="featureBox">
-										<div class="box">
-											<div class="h_icon">
-												<img src="images/hot.png" width="50" height="50" />
-											</div>
-											<div class="imgbg">
-												<a href="#"><img src="images/hot4.jpg" width="160"
-													height="136" /></a>
-											</div>
-											<div class="name">
-												<a href="#">
-													<h2>品利特级橄榄油</h2> 750ml*4瓶装组合 西班牙原装进口
-												</a>
-											</div>
-											<div class="price">
-												<font>￥<span>280</span></font> &nbsp; 30R
-											</div>
-										</div>
-									</li>
+										</li>
+									</c:forEach>
 								</ul>
 							</div>
 						</div>
@@ -229,9 +178,9 @@
 					<ul class="imgs" id="actor">
 						<li><a href="#"><img src="images/tm_r.jpg" width="211"
 								height="357" /></a></li>
-						<li><a href="#"><img src="images/tm_r.jpg" width="211"
+						<li><a href="#"><img src="images/tm_b1.jpg" width="211"
 								height="357" /></a></li>
-						<li><a href="#"><img src="images/tm_r.jpg" width="211"
+						<li><a href="#"><img src="images/tm_b2.jpg" width="211"
 								height="357" /></a></li>
 					</ul>
 					<div class="previ">上一张</div>
@@ -239,96 +188,26 @@
 				</div>
 			</div>
 			<div class="sell_right">
-				<div class="sell_1">
-					<div class="s_img">
-						<a href="#"><img src="images/tm_1.jpg" width="185"
-							height="155" /></a>
+				<c:forEach items="${specialSale }" var="specialSale"
+					varStatus="sale">
+					<div class="sell_${sale.index+1 }">
+						<div class="s${sale.index+1 }_img">
+							<a href="GoodsPageServlet?id=${specialSale.id }" target="_blank"
+								title="${specialSale.name }"><img
+								src="${specialSale.proPic }" width="185" height="155" /></a>
+						</div>
+						<div class="s_price">
+							￥<span>${specialSale.price }</span>
+						</div>
+						<div class="s_name">
+							<h2>
+								<a href="GoodsPageServlet?id=${specialSale.id }" target="_blank"
+									title="${specialSale.name }">${specialSale.name }</a>
+							</h2>
+							倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
+						</div>
 					</div>
-					<div class="s_price">
-						￥<span>89</span>
-					</div>
-					<div class="s_name">
-						<h2>
-							<a href="#">沙宣洗发水</a>
-						</h2>
-						倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
-					</div>
-				</div>
-				<div class="sell_2">
-					<div class="s_img">
-						<a href="#"><img src="images/tm_2.jpg" width="185"
-							height="155" /></a>
-					</div>
-					<div class="s_price">
-						￥<span>289</span>
-					</div>
-					<div class="s_name">
-						<h2>
-							<a href="#">德芙巧克力</a>
-						</h2>
-						倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
-					</div>
-				</div>
-				<div class="sell_b1">
-					<div class="sb_img">
-						<a href="#"><img src="images/tm_b1.jpg" width="242"
-							height="356" /></a>
-					</div>
-					<div class="s_price">
-						￥<span>289</span>
-					</div>
-					<div class="s_name">
-						<h2>
-							<a href="#">东北大米</a>
-						</h2>
-						倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
-					</div>
-				</div>
-				<div class="sell_3">
-					<div class="s_img">
-						<a href="#"><img src="images/tm_3.jpg" width="185"
-							height="155" /></a>
-					</div>
-					<div class="s_price">
-						￥<span>289</span>
-					</div>
-					<div class="s_name">
-						<h2>
-							<a href="#">迪奥香水</a>
-						</h2>
-						倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
-					</div>
-				</div>
-				<div class="sell_4">
-					<div class="s_img">
-						<a href="#"><img src="images/tm_4.jpg" width="185"
-							height="155" /></a>
-					</div>
-					<div class="s_price">
-						￥<span>289</span>
-					</div>
-					<div class="s_name">
-						<h2>
-							<a href="#">美妆</a>
-						</h2>
-						倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
-					</div>
-				</div>
-				<div class="sell_b2">
-					<div class="sb_img">
-						<a href="#"><img src="images/tm_b2.jpg" width="242"
-							height="356" /></a>
-					</div>
-					<div class="s_price">
-						￥<span>289</span>
-					</div>
-					<div class="s_name">
-						<h2>
-							<a href="#">美妆</a>
-						</h2>
-						倒计时：<span>1200</span> 时 <span>30</span> 分 <span>28</span> 秒
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 		<!--End 限时特卖 End-->
@@ -351,8 +230,9 @@
 						<div id="imgPlay${big.index+1 }">
 							<ul class="imgs" id="actor${big.index+1 }">
 								<c:forEach items="${bigType.goods }" var="goods">
-									<li><a href="#"><img src="${goods.proPic }"
-											width="211" height="286" /></a></li>
+									<li><a href="GoodsPageServlet?id=${goods.id }"
+										target="_blank" title="${goods.name }"><img
+											src="${goods.proPic }" width="211" height="286" /></a></li>
 								</c:forEach>
 							</ul>
 							<div class="prev${big.index+1 }">上一张</div>
@@ -372,14 +252,16 @@
 						<c:forEach items="${bigType.goods }" var="goods">
 							<li>
 								<div class="name">
-									<a href="#">${goods.name }</a>
+									<a href="GoodsPageServlet?id=${goods.id }" target="_blank"
+										title="${goods.name }">${goods.name }</a>
 								</div>
 								<div class="price">
 									<font>￥<span>${goods.price }</span></font> &nbsp; 26R
 								</div>
 								<div class="img">
-									<a href="#"><img src="${goods.proPic }" width="185"
-										height="155" /></a>
+									<a href="GoodsPageServlet?id=${goods.id }" target="_blank"
+										title="${goods.name }"><img src="${goods.proPic }"
+										width="185" height="155" /></a>
 								</div>
 							</li>
 						</c:forEach>

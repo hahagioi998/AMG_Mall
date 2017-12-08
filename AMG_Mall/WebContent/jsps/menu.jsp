@@ -19,11 +19,10 @@
 									<c:forEach items="${bigType.smallTypeList }" var="smallType">
 										<div class="zj_l_c">
 											<h2>${smallType.name}</h2>
-											<a href="#">坚果</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|<a
-												href="#">牛肉干</a>|<a href="#">巧克力</a>| <a href="#">口香糖</a>|<a
-												href="#">海苔</a>|<a href="#">鱼干</a>|<a href="#">蜜饯</a>|<a
-												href="#">红枣</a>| <a href="#">蜜饯</a>|<a href="#">红枣</a>|<a
-												href="#">牛肉干</a>|<a href="#">蜜饯</a>|
+											<c:forEach items="${smallType.detailTypeList }"
+												var="detailType">
+												<a href="#">${detailType.name}</a>|
+											</c:forEach>
 										</div>
 									</c:forEach>
 								</div>

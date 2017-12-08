@@ -44,6 +44,7 @@ public class GoodsDao {
 				String bigTypeName = rs.getString("bigTypeName");  //大类名称
 				int smallTypeId = rs.getInt("smallTypeId");  //小类ID
 				String smallTypeName = rs.getString("smallTypeName");  //小类名称
+				
 				goods = new GoodsBean(name, price, proPic, brand, sales, views, stock, contents, bigTypeId, smallTypeId, null);
 				goods.setBigTypeName(bigTypeName);
 				goods.setSmallTypeName(smallTypeName);	
@@ -189,6 +190,80 @@ public class GoodsDao {
 				System.out.println("id="+id+"    name="+name+"    price="+price+"    proPic="+proPic);
 				GoodsBean g = new  GoodsBean(id, name, price, proPic);
 				list.add(g);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}
+
+	/**
+	 * 查找销售量排名前十的商品
+	 * @return
+	 */
+	public static List<GoodsBean> salesTop() {
+		String sql = "select top 10 id,name,price,proPic from t_goods  order by sales desc";
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		List<GoodsBean> list = new ArrayList<GoodsBean>();
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				int id = rs.getInt("id");
+				String name = rs.getString("name");
+				double price = rs.getDouble("price");
+				String proPic = rs.getString("proPic");
+				System.out.println("相关商品: id="+id+"    name="+name+"    price="+price+"    proPic="+proPic);
+				GoodsBean g = new  GoodsBean(id, name, price, proPic);
+				list.add(g);
+				System.out.println("搜索页前10商品查询完毕");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}
+
+	/**
+	 * 查找特卖商品前八的商品
+	 * @return
+	 */
+	public static List<GoodsBean> specialSale() {
+		String sql = "select top 6 id,name,price,proPic from t_goods where state='特卖'  order by sales desc";
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		List<GoodsBean> list = new ArrayList<GoodsBean>();
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				int id = rs.getInt("id");
+				String name = rs.getString("name");
+				double price = rs.getDouble("price");
+				String proPic = rs.getString("proPic");
+				System.out.println("相关商品: id="+id+"    name="+name+"    price="+price+"    proPic="+proPic);
+				GoodsBean g = new  GoodsBean(id, name, price, proPic);
+				list.add(g);
+				System.out.println("搜索页前8商品查询完毕");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
