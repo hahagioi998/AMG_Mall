@@ -5,7 +5,7 @@
 		<!--Begin 商品分类详情 Begin-->
 		<div class="nav">
 			<div class="nav_t">全部商品分类</div>
-			<div class="leftNav">
+			<div class="leftNav" style="display: none;">
 				<ul>
 					<!-- 商品分类循环go -->
 					<c:forEach items="${floor }" var="bigType">
@@ -21,7 +21,7 @@
 											<h2>${smallType.name}</h2>
 											<c:forEach items="${smallType.detailTypeList }"
 												var="detailType">
-												<a href="#">${detailType.name}</a>|
+												<a href="search?did=${detailType.id }&p=1">${detailType.name}</a>|
 											</c:forEach>
 										</div>
 									</c:forEach>
@@ -49,7 +49,7 @@
 			<li><a href="Digital.html">数码</a></li>
 			<li><a href="GroupBuying.html">团购</a></li>
 		</ul>
-		<div class="m_ad">双十一狂欢！</div>
+		<div class="m_ad">双十二狂欢！</div>
 	</div>
 </div>
 <!--End Menu End-->

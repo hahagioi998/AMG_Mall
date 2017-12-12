@@ -142,9 +142,8 @@
 		<a href="Index.html"><img src="images/logo.png" /></a>
 	</div>
 	<div class="search">
-		<form>
-			<input type="text" value="" class="s_ipt" /> <input type="submit"
-				value="搜索" class="s_btn" />
+		<form action="search" name="Searchform" method="post">
+			<input type="text" value="" class="s_ipt" /><input value="搜索" class="s_btn" />
 		</form>
 		<span class="fl"><a href="#">针织衣</a><a href="#">Iphone X</a><a
 			href="#">羽绒服</a><a href="#">客厅灯</a><a href="#">口红</a><a href="#">手机</a></span>
@@ -203,6 +202,17 @@
 </div>
 <!--End 头部代码（最顶部、logo、搜索、导航菜单） End-->
 <script type="text/javascript">
+	$(document).ready(function() {
+		$("input.s_btn").click(function() {
+			var words = $("input.s_ipt").val();
+			if (words) {
+				document.Searchform.submit();
+			} else {
+				alert("搜索内容不能为空")
+			}
+
+		});
+	});
 	$(function() {
 		var total = 0;
 		/*

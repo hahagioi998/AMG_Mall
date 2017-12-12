@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.hafele.bean.GoodsBean;
+import com.hafele.bean.PageBean;
 import com.hafele.util.Conn;
 
 /**
@@ -278,6 +279,26 @@ public class GoodsDao {
 			}
 		}
 		return list;
+	}
+
+	public static PageBean bidPageSel(String bid, int p, String order) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static PageBean sidPageSel(String sid, int p, String order) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static PageBean didPageSel(String did, int p, String order) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static PageBean pageSel(String s, int p, String order) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
