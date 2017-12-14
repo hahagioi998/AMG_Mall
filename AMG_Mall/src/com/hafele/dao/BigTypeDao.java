@@ -110,9 +110,31 @@ public class BigTypeDao {
 		
 	}
 
-	public static Object bidIsName(String bid) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * 根据大类ID查询大类名称
+	 * @return
+	 */
+	public static String bidIsName(String bid) {
+		String sql = "select name from t_bigType where id = "+bid;
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		String name = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			name = rs.getString("name");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return name;
 	}
 
 }

@@ -13,6 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>爱码购</title>
 <link rel="icon" href="images/title_icon.png" type="image/x-icon" />
 
 <link href="css/style.css" rel="stylesheet" />
@@ -41,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </script>
 <script type="text/javascript" src="js/p_tab.js"></script>
 <script type="text/javascript" src="js/shade.js"></script>
-<title></title>
+
 </head>
 <body>
 	<%@ include file="jsps/top.jsp"%>

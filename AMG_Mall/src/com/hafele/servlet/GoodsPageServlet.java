@@ -77,7 +77,7 @@ public class GoodsPageServlet extends HttpServlet {
 		}
 		request.setAttribute("shoppingCartGoodsList", goodsList);
 		
-		request.getRequestDispatcher("goods.jsp").forward(request, response);
+		request.getRequestDispatcher("product.jsp").forward(request, response);
 	}
 
 }

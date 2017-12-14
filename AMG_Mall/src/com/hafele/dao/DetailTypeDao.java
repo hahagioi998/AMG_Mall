@@ -53,9 +53,31 @@ public class DetailTypeDao {
 		return list;
 	}
 
-	public static Object didIsName(String did) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * 根据细类ID查询细类名称
+	 * @return
+	 */
+	public static String didIsName(String did) {
+		String sql = "select name from t_detailType where id = "+did;
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		String name = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			name = rs.getString("name");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return name;
 	}
 
 }

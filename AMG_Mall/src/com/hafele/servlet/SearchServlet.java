@@ -45,7 +45,7 @@ public class SearchServlet extends HttpServlet {
 		String bid = request.getParameter("bid");
 		String sid = request.getParameter("sid");
 		String did = request.getParameter("did");
-		List<GoodsBean> salesTop = GoodsDao.salesTop(); //前五销量
+		List<GoodsBean> salesTop = GoodsDao.salesTop(); //前十销量
 		PageBean pageDate = null;
 		if(order==null){
 			order="1";
@@ -65,8 +65,8 @@ public class SearchServlet extends HttpServlet {
 		}else{
 			//商品名称查询
 			/*
-			1:按热度排序
-			2:按发布时间
+			1:按热度(默认)排序
+			2:按发布时间排序
 			3:按价格排序
 			4:按销量排序
 			 */

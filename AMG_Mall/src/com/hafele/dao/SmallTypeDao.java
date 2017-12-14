@@ -93,8 +93,30 @@ public class SmallTypeDao {
 		
 	}
 
-	public static Object sidIsName(String sid) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * 根据小类ID查询小类名称
+	 * @return
+	 */
+	public static String sidIsName(String sid) {
+		String sql = "select name from t_smallType where id = "+sid;
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		String name = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			name = rs.getString("name");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return name;
 	}
 }

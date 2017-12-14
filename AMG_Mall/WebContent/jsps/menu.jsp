@@ -12,16 +12,19 @@
 						<li>
 							<div class="fj">
 								<span class="n_img"><span></span><img
-									src="${bigType.imgUrl }" /></span> <span class="fl">${bigType.name }</span>
+									src="${bigType.imgUrl }" /></span> <span class="fl"><a
+									href="search?bid=${bigType.id }&p=1" target="_blank"></a>${bigType.name }</span>
 							</div>
 							<div class="zj" style="top:${bigType.remarks };">
 								<div class="zj_l">
 									<c:forEach items="${bigType.smallTypeList }" var="smallType">
 										<div class="zj_l_c">
-											<h2>${smallType.name}</h2>
+											<h2>
+												<a href="search?sid=${smallType.id }&p=1" target="_blank">${smallType.name }</a>
+											</h2>
 											<c:forEach items="${smallType.detailTypeList }"
 												var="detailType">
-												<a href="search?did=${detailType.id }&p=1">${detailType.name}</a>|
+												<a href="search?did=${detailType.id }&p=1" target="_blank">${detailType.name}</a>|
 											</c:forEach>
 										</div>
 									</c:forEach>

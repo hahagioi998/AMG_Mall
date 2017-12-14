@@ -51,14 +51,17 @@ public class GoodsDao {
 				goods.setSmallTypeName(smallTypeName);	
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			try {
 				rs.close();
 				con.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -91,14 +94,17 @@ public class GoodsDao {
 				System.out.println("商品页相关商品6个查询完毕");
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			try {
 				rs.close();
 				con.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -120,11 +126,13 @@ public class GoodsDao {
 			ps.executeUpdate();
 			
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			try {
 				con.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -137,37 +145,40 @@ public class GoodsDao {
 	 */
 	public static GoodsBean shoppingCartGoodsIdSel(int id) {
 		//名称  单价  ID 图片
-				String sql = "select name,price,proPic from t_goods where id=?";
-				Connection con = Conn.getCon();
-				ResultSet rs = null;
-				GoodsBean goods = null;
-				try {
-					PreparedStatement ps = con.prepareStatement(sql);
-					ps.setInt(1, id);
-					rs = ps.executeQuery();
-					while(rs.next()){
-						String name = rs.getString("name");  //商品名称
-						double price = rs.getDouble("price");  //商品价格
-						String proPic = rs.getString("proPic");  //商品图片
-						goods = new GoodsBean();
-						goods.setId(id);
-						goods.setName(name);
-						goods.setPrice(price);
-						goods.setProPic(proPic);
-					}
-				} catch (SQLException e) {
-					e.printStackTrace();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}finally{
-					try {
-						rs.close();
-						con.close();
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
-				}
-				return goods;
+		String sql = "select name,price,proPic from t_goods where id=?";
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		GoodsBean goods = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				String name = rs.getString("name");  //商品名称
+				double price = rs.getDouble("price");  //商品价格
+				String proPic = rs.getString("proPic");  //商品图片
+				goods = new GoodsBean();
+				goods.setId(id);
+				goods.setName(name);
+				goods.setPrice(price);
+				goods.setProPic(proPic);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return goods;
 	}
 
 	/**
@@ -193,14 +204,17 @@ public class GoodsDao {
 				list.add(g);
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			try {
 				rs.close();
 				con.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -230,14 +244,17 @@ public class GoodsDao {
 				System.out.println("搜索页前10商品查询完毕");
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			try {
 				rs.close();
 				con.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -267,38 +284,359 @@ public class GoodsDao {
 				System.out.println("搜索页前8商品查询完毕");
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			try {
 				rs.close();
 				con.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		return list;
 	}
 
+	/**
+	 * 分页查询  根据大类查询
+	 * @param name 商品名称 
+	 * @param p 需求页码
+	 * @return
+	 */
 	public static PageBean bidPageSel(String bid, int p, String order) {
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = Conn.getCon();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		PageBean pb = new PageBean();
+		int count = 0; //查询的总条数
+		String sql = "select count(*) count from t_goods where bigTypeId ="+bid;
+		count = count(sql); //获取条数
+		System.out.println("获取到查询的条数为："+count);
+		pb.setCount(count); //放入总条数
+		pb.setP(p); //放入当前页码
+		System.out.println("pb.getP()="+pb.getP());
+		String sql2 = null;
+		if(order.equals("1")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+				+"from t_goods "
+				+"where bigTypeId ="+bid
+				+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where bigTypeId ="+bid+" order by views desc) "
+				+"order by views desc";
+		}else if(order.equals("2")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where bigTypeId ="+bid
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where bigTypeId ="+bid+" order by id desc) "
+					+"order by id desc";
+		}else if(order.equals("3")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where bigTypeId ="+bid
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where bigTypeId ="+bid+" order by price desc) "
+					+"order by price desc";
+		}else if(order.equals("4")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where bigTypeId ="+bid
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where bigTypeId ="+bid+" order by sales desc) "
+					+"order by sales desc";
+		}
+		System.out.println("分页查询语句为："+sql2);
+		List<GoodsBean> list = new ArrayList<GoodsBean>(); //实例化一个商品集合
+		try {
+			ps = conn.prepareStatement(sql2);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				//图片 名称 价格 ID
+				int id = rs.getInt("id");
+				String sname = rs.getString("name");
+				double price = rs.getDouble("price");
+				String proPic = rs.getString("proPic");
+				System.out.println("相关商品: id="+id+"    sname="+sname+"    price="+price+"    proPic="+proPic);
+				GoodsBean g = new GoodsBean(id, sname, price, proPic);
+				list.add(g);
+			}
+			pb.setData(list);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return pb;
 	}
 
+	/**
+	 * 分页查询  根据小类查询
+	 * @param name 商品名称 
+	 * @param p 需求页码
+	 * @return
+	 */
 	public static PageBean sidPageSel(String sid, int p, String order) {
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = Conn.getCon();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		PageBean pb = new PageBean();
+		int count = 0; //查询的总条数
+		String sql = "select count(*) count from t_goods where smallTypeId ="+sid;
+		count = count(sql); //获取条数
+		System.out.println("获取到查询的条数为："+count);
+		pb.setCount(count); //放入总条数
+		pb.setP(p); //放入当前页码
+		System.out.println("pb.getP()="+pb.getP());
+		String sql2 = null;
+		if(order.equals("1")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+				+"from t_goods "
+				+"where smallTypeId ="+sid
+				+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where smallTypeId ="+sid+" order by views desc) "
+				+"order by views desc";
+		}else if(order.equals("2")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where smallTypeId ="+sid
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where smallTypeId ="+sid+" order by id desc) "
+					+"order by id desc";
+		}else if(order.equals("3")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where smallTypeId ="+sid
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where smallTypeId ="+sid+" order by price desc) "
+					+"order by price desc";
+		}else if(order.equals("4")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where smallTypeId ="+sid
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where smallTypeId ="+sid+" order by sales desc) "
+					+"order by sales desc";
+		}
+		System.out.println("分页查询语句为："+sql2);
+		List<GoodsBean> list = new ArrayList<GoodsBean>(); //实例化一个商品集合
+		try {
+			ps = conn.prepareStatement(sql2);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				//图片 名称 价格 ID
+				int id = rs.getInt("id");
+				String sname = rs.getString("name");
+				double price = rs.getDouble("price");
+				String proPic = rs.getString("proPic");
+				System.out.println("相关商品: id="+id+"    sname="+sname+"    price="+price+"    proPic="+proPic);
+				GoodsBean g = new  GoodsBean(id, sname, price, proPic);
+				list.add(g);
+			}
+			pb.setData(list);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
+		return pb;
 	}
 
+	/**
+	 * 分页查询  根据细类查询
+	 * @param name 商品名称 
+	 * @param p 需求页码
+	 * @return
+	 */
 	public static PageBean didPageSel(String did, int p, String order) {
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = Conn.getCon();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		PageBean pb = new PageBean();
+		int count = 0; //查询的总条数
+		String sql = "select count(*) count from t_goods where detailTypeId ="+did;
+		count = count(sql); //获取条数
+		System.out.println("获取到查询的条数为："+count);
+		pb.setCount(count); //放入总条数
+		pb.setP(p); //放入当前页码
+		System.out.println("pb.getP()="+pb.getP());
+		String sql2 = null;
+		if(order.equals("1")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+				+"from t_goods "
+				+"where detailTypeId ="+did
+				+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where detailTypeId ="+did+" order by views desc) "
+				+"order by views desc";
+		}else if(order.equals("2")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where detailTypeId ="+did
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where detailTypeId ="+did+" order by id desc) "
+					+"order by id desc";
+		}else if(order.equals("3")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where detailTypeId ="+did
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where detailTypeId ="+did+" order by price desc) "
+					+"order by price desc";
+		}else if(order.equals("4")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where detailTypeId ="+did
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where detailTypeId ="+did+" order by sales desc) "
+					+"order by sales desc";
+		}
+		System.out.println("分页查询语句为："+sql2);
+		List<GoodsBean> list = new ArrayList<GoodsBean>(); //实例化一个商品集合
+		try {
+			ps = conn.prepareStatement(sql2);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				//图片 名称 价格 ID
+				int id = rs.getInt("id");
+				String sname = rs.getString("name");
+				double price = rs.getDouble("price");
+				String proPic = rs.getString("proPic");
+				System.out.println("相关商品: id="+id+"    sname="+sname+"    price="+price+"    proPic="+proPic);
+				GoodsBean g = new  GoodsBean(id, sname, price, proPic);
+				list.add(g);
+			}
+			pb.setData(list);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
+		return pb;
 	}
 
-	public static PageBean pageSel(String s, int p, String order) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * 分页查询  根据商品名称查询
+	 * @param name 商品名称 
+	 * @param p 需求页码
+	 * @return
+	 */
+	public static PageBean pageSel(String name, int p, String order) {
+		Connection conn = Conn.getCon();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		PageBean pb = new PageBean();
+		int count = 0; //查询的总条数
+		String sql = "select count(*) count from t_goods where name like '%"+name+"%'";
+		count = count(sql); //获取条数
+		System.out.println("获取到查询的条数为："+count);
+		pb.setCount(count); //放入总条数
+		pb.setP(p); //放入当前页码
+		System.out.println("pb.getP()="+pb.getP());
+		String sql2 = null;
+		if(order.equals("1")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+				+"from t_goods "
+				+"where name like '%"+name+"%' "
+				+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where name like '%"+name+"%' order by views desc) "
+				+"order by views desc";
+		}else if(order.equals("2")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where name like '%"+name+"%' "
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where name like '%"+name+"%' order by id desc) "
+					+"order by id desc";
+		}else if(order.equals("3")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where name like '%"+name+"%' "
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where name like '%"+name+"%' order by price desc) "
+					+"order by price desc";
+		}else if(order.equals("4")){
+			sql2 = "select top "+pb.getPagesize()+" id,name,price,proPic "
+					+"from t_goods "
+					+"where name like '%"+name+"%' "
+					+" and name not in(select top "+(pb.getP()-1)*pb.getPagesize()+" name from t_goods where name like '%"+name+"%' order by sales desc) "
+					+"order by sales desc";
+		}
+		System.out.println("分页查询语句为："+sql2);
+		List<GoodsBean> list = new ArrayList<GoodsBean>(); //实例化一个商品集合
+		try {
+			ps = conn.prepareStatement(sql2);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				//图片 名称 价格 ID
+				int id = rs.getInt("id");
+				String sname = rs.getString("name");
+				double price = rs.getDouble("price");
+				String proPic = rs.getString("proPic");
+				System.out.println("相关商品: id="+id+"    sname="+sname+"    price="+price+"    proPic="+proPic);
+				GoodsBean g = new  GoodsBean(id, sname, price, proPic);
+				list.add(g);
+			}
+			pb.setData(list);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
+		return pb;
+	}
+	
+	/**
+	 * 查询总行数
+	 * @return
+	 */
+	@SuppressWarnings("unused")
+	public static int count(String sql){
+		Connection con = Conn.getCon();
+		int i = 0;
+		ResultSet rs = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			if(rs!=null){
+				i = rs.getInt("count");
+			}else{
+				i = 0;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}
+		System.out.println("查询到的用户行数为："+i);
+		return i;
 	}
 
 }
