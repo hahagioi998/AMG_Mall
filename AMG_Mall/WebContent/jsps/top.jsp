@@ -144,6 +144,7 @@
 	<div class="search">
 		<form action="search" name="Searchform" method="post">
 			<input type="text" value="" class="s_ipt" /><input value="搜索" class="s_btn" />
+			<input type="hidden" name="p" value="1" />
 		</form>
 		<span class="fl"><a href="#">针织衣</a><a href="#">Iphone X</a><a
 			href="#">羽绒服</a><a href="#">客厅灯</a><a href="#">口红</a><a href="#">手机</a></span>

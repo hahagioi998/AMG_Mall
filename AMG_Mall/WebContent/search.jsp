@@ -9,13 +9,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>${tname }_搜索</title>
 <link rel="icon" href="images/title_icon.png" type="image/x-icon" />
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <link type="text/css" href="css/common.css" rel="stylesheet" />
 <link type="text/css" href="css/top.css" rel="stylesheet" />
 <link type="text/css" href="css/menu.css" rel="stylesheet" />
 <link type="text/css" href="css/footer.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/jquery.bxslider_e88acd1b.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="js/menu.js"></script>
 <script type="text/javascript" src="js/lrscroll_1.js"></script>

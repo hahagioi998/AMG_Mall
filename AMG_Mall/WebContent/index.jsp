@@ -34,6 +34,7 @@
 <script type="text/javascript" src="js/jquery-1.11.1.min_044d0927.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider_e88acd1b.js"></script>
 <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 
 <script type="text/javascript" src="js/menu.js"></script>
 <script type="text/javascript" src="js/select.js"></script>
@@ -62,9 +63,8 @@
 						<c:forEach items="${floor }" var="bigType">
 							<li>
 								<div class="fj">
-									<span class="n_img"><span></span><img
-										src="${bigType.imgUrl }" /></span> <span class="fl"><a
-										href="search?bid=${bigType.id }&p=1" target="_blank"></a>${bigType.name }</span>
+									<span class="n_img"><span> </span><img
+										src="${bigType.imgUrl }" /> </span> <span class="fl">${bigType.name }</span>
 								</div>
 								<div class="zj" style="top:${bigType.remarks };">
 									<div class="zj_l">
