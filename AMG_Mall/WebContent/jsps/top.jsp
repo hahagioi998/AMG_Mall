@@ -81,13 +81,13 @@
 		<c:if test="${username == null }">
 			<span class="fr"> <span class="fl">你好，请<a
 					href="login.jsp">登录</a>&nbsp; <a href="regist.jsp"
-					style="color: #ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|
+					style="color: #ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="login.jsp">我的订单</a>&nbsp;|
 			</span>
 		</c:if>
 		<c:if test="${username != null }">
 			<span class="fr"> <span class="fl">Hi,<a href="#">${username}</a>&nbsp;
 					<a href="logout.user" style="color: #ff4e00;">退出</a>&nbsp;|&nbsp;<a
-					href="#">我的订单</a>&nbsp;|
+					href="member_order.jsp">我的订单</a>&nbsp;|
 			</span>
 		</c:if>
 		<span class="ss">
@@ -139,7 +139,7 @@
 </div>
 <div class="top">
 	<div class="logo">
-		<a href="Index.html"><img src="images/logo.png" /></a>
+		<a href="index.jsp"><img src="images/logo.png" /></a>
 	</div>
 	<div class="search">
 		<form action="search" name="Searchform" method="post">
