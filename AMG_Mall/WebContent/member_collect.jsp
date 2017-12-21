@@ -10,7 +10,7 @@
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户信息</title>
+<title>我的收藏</title>
 <link rel="icon" href="images/title_icon.png" type="image/x-icon" />
 
 <link href="css/style.css" rel="stylesheet" />
@@ -69,68 +69,64 @@
 				</div>
 			</div>
 			<div class="m_right">
-				<div class="m_des">
-					<table border="0" style="width: 870px; line-height: 22px;"
-						cellspacing="0" cellpadding="0">
-						<tr valign="top">
-							<td width="115"><img src="images/user.jpg" width="90"
-								height="90" /></td>
-							<td>
-								<div class="m_user">TRACY</div>
-								<p>
-									等级：注册用户 <br /> <font color="#ff4e00">您还差 270 积分达到 分红100</font><br />
-									上一次登录时间: 2015-09-28 18:19:47<br /> 您还没有通过邮件认证 <a href="#"
-										style="color: #ff4e00;">点此发送认证邮件</a>
-								</p>
-								<div class="m_notice">用户中心公告！</div>
-							</td>
-						</tr>
-					</table>
+				<p></p>
+				<div class="mem_tit">
+					<span class="fr"
+						style="font-size: 12px; color: #55555; font-family: '宋体'; margin-top: 5px;">共发现4件</span>我的收藏
 				</div>
-
-				<div class="mem_t">资产信息</div>
-				<table border="0" class="mon_tab"
-					style="width: 870px; margin-bottom: 20px;" cellspacing="0"
-					cellpadding="0">
+				<table border="0" class="order_tab" style="width: 930px;"
+					cellspacing="0" cellpadding="0">
 					<tr>
-						<td width="33%">用户等级：<span style="color: #555555;">普通会员</span></td>
-						<td width="33%">消费金额：<span>￥200元</span></td>
-						<td width="33%">返还积分：<span>99R</span></td>
+						<td align="center" width="420">商品名称</td>
+						<td align="center" width="180">价格</td>
+						<td align="center" width="270">操作</td>
 					</tr>
 					<tr>
-						<td>账户余额：<span>￥200元</span></td>
+						<td style="font-family: '宋体';">
+							<div class="sm_img">
+								<img src="images/simg.jpg" width="48" height="48" />
+							</div>法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只
 						</td>
-						<td>红包个数：<span style="color: #555555;">3个</span></td>
-						</td>
-						<td>红包价值：<span>￥50元</span></td>
-						</td>
+						<td align="center">￥456.00</td>
+						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
+							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
+							href="#">删除</a></td>
 					</tr>
 					<tr>
-						<td colspan="3">订单提醒： <font style="font-family: '宋体';">待付款(<span>0</span>)
-								&nbsp; &nbsp; &nbsp; &nbsp; 待收货(<span>2</span>) &nbsp; &nbsp;
-								&nbsp; &nbsp; 待评论(<span>1</span>)
-						</font>
+						<td style="font-family: '宋体';">
+							<div class="sm_img">
+								<img src="images/simg.jpg" width="48" height="48" />
+							</div>法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只
 						</td>
+						<td align="center">￥456.00</td>
+						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
+							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
+							href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td style="font-family: '宋体';">
+							<div class="sm_img">
+								<img src="images/simg.jpg" width="48" height="48" />
+							</div>法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只
+						</td>
+						<td align="center">￥456.00</td>
+						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
+							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
+							href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td style="font-family: '宋体';">
+							<div class="sm_img">
+								<img src="images/simg.jpg" width="48" height="48" />
+							</div>法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只
+						</td>
+						<td align="center">￥456.00</td>
+						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
+							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
+							href="#">删除</a></td>
 					</tr>
 				</table>
 
-				<div class="mem_t">账号信息</div>
-				<table border="0" class="mon_tab"
-					style="width: 870px; margin-bottom: 20px;" cellspacing="0"
-					cellpadding="0">
-					<tr>
-						<td width="40%">用户ID：<span style="color: #555555;">12345678</span></td>
-						<td width="60%">邀请人：<span style="color: #555555;">邀请人姓名</span></td>
-					</tr>
-					<tr>
-						<td>电&nbsp; &nbsp; 话：<span style="color: #555555;">1861111111</span></td>
-						<td>邮&nbsp; &nbsp; 箱：<span style="color: #555555;">12345678@qq.com</span></td>
-					</tr>
-					<tr>
-						<td>身份证号：<span style="color: #555555;">522555123456789</span></td>
-						<td>注册时间：<span style="color: #555555;">2015-10-10</span></td>
-					</tr>
-				</table>
 
 
 			</div>

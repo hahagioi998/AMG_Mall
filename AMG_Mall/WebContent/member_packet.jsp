@@ -10,7 +10,7 @@
 <head>
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户信息</title>
+<title>我的红包</title>
 <link rel="icon" href="images/title_icon.png" type="image/x-icon" />
 
 <link href="css/style.css" rel="stylesheet" />
@@ -69,70 +69,50 @@
 				</div>
 			</div>
 			<div class="m_right">
-				<div class="m_des">
-					<table border="0" style="width: 870px; line-height: 22px;"
-						cellspacing="0" cellpadding="0">
-						<tr valign="top">
-							<td width="115"><img src="images/user.jpg" width="90"
-								height="90" /></td>
-							<td>
-								<div class="m_user">TRACY</div>
-								<p>
-									等级：注册用户 <br /> <font color="#ff4e00">您还差 270 积分达到 分红100</font><br />
-									上一次登录时间: 2015-09-28 18:19:47<br /> 您还没有通过邮件认证 <a href="#"
-										style="color: #ff4e00;">点此发送认证邮件</a>
-								</p>
-								<div class="m_notice">用户中心公告！</div>
-							</td>
+				<p></p>
+				<div class="mem_tit">我的红包</div>
+				<table border="0" class="order_tab"
+					style="width: 930px; text-align: center; margin-bottom: 30px;"
+					cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="155">红包序号</td>
+						<td width="155">红包名称</td>
+						<td width="155">红包金额</td>
+						<td width="155">最小订单金额</td>
+						<td width="155">截止使用日期</td>
+						<td width="155">红包状态</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+
+
+				<div class="mem_tit">添加红包</div>
+				<form>
+					<table border="0" style="width: 880px;" cellspacing="0"
+						cellpadding="0">
+						<tr height="50">
+							<td width="80" align="right">红包序列码 &nbsp; &nbsp;</td>
+							<td width="300"><input type="text" value="" class="add_ipt"
+								style="width: 260px;" /></td>
+							<td><input type="submit" value="生成代码" class="btn_tj" /></td>
 						</tr>
 					</table>
-				</div>
-
-				<div class="mem_t">资产信息</div>
-				<table border="0" class="mon_tab"
-					style="width: 870px; margin-bottom: 20px;" cellspacing="0"
-					cellpadding="0">
-					<tr>
-						<td width="33%">用户等级：<span style="color: #555555;">普通会员</span></td>
-						<td width="33%">消费金额：<span>￥200元</span></td>
-						<td width="33%">返还积分：<span>99R</span></td>
-					</tr>
-					<tr>
-						<td>账户余额：<span>￥200元</span></td>
-						</td>
-						<td>红包个数：<span style="color: #555555;">3个</span></td>
-						</td>
-						<td>红包价值：<span>￥50元</span></td>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="3">订单提醒： <font style="font-family: '宋体';">待付款(<span>0</span>)
-								&nbsp; &nbsp; &nbsp; &nbsp; 待收货(<span>2</span>) &nbsp; &nbsp;
-								&nbsp; &nbsp; 待评论(<span>1</span>)
-						</font>
-						</td>
-					</tr>
-				</table>
-
-				<div class="mem_t">账号信息</div>
-				<table border="0" class="mon_tab"
-					style="width: 870px; margin-bottom: 20px;" cellspacing="0"
-					cellpadding="0">
-					<tr>
-						<td width="40%">用户ID：<span style="color: #555555;">12345678</span></td>
-						<td width="60%">邀请人：<span style="color: #555555;">邀请人姓名</span></td>
-					</tr>
-					<tr>
-						<td>电&nbsp; &nbsp; 话：<span style="color: #555555;">1861111111</span></td>
-						<td>邮&nbsp; &nbsp; 箱：<span style="color: #555555;">12345678@qq.com</span></td>
-					</tr>
-					<tr>
-						<td>身份证号：<span style="color: #555555;">522555123456789</span></td>
-						<td>注册时间：<span style="color: #555555;">2015-10-10</span></td>
-					</tr>
-				</table>
-
-
+				</form>
 			</div>
 		</div>
 		<!--End 用户中心 End-->
