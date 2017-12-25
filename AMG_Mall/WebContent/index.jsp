@@ -227,7 +227,7 @@
 		<!--Begin 限时特卖 Begin-->
 		<div class="i_t mar_10">
 			<span class="fl">限时特卖</span> <span class="i_mores fr"><a
-				href="#">更多</a></span>
+				href="sell.jsp">更多</a></span>
 		</div>
 		<div class="content">
 			<div class="i_sell">

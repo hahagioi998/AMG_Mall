@@ -34,7 +34,7 @@
 				<div class="left_m">
 					<div class="left_m_t t_bg1">订单中心</div>
 					<ul>
-						<li><a href="member_order.jsp" class="now">我的订单</a></li>
+						<li><a href="member_order.jsp">我的订单</a></li>
 						<li><a href="member_address.jsp">收货地址</a></li>
 						<li><a href="#">缺货登记</a></li>
 						<li><a href="#">跟踪订单</a></li>
@@ -54,7 +54,7 @@
 					<div class="left_m_t t_bg3">账户中心</div>
 					<ul>
 						<li><a href="member_safe.jsp">账户安全</a></li>
-						<li><a href="member_packet.jsp">我的红包</a></li>
+						<li><a href="member_packet.jsp"  class="now">我的红包</a></li>
 						<li><a href="member_money.jsp">资金管理</a></li>
 					</ul>
 				</div>

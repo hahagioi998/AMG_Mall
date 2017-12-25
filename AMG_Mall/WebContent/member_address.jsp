@@ -34,8 +34,8 @@
 				<div class="left_m">
 					<div class="left_m_t t_bg1">订单中心</div>
 					<ul>
-						<li><a href="member_order.jsp" class="now">我的订单</a></li>
-						<li><a href="member_address.jsp">收货地址</a></li>
+						<li><a href="member_order.jsp">我的订单</a></li>
+						<li><a href="member_address.jsp" class="now">收货地址</a></li>
 						<li><a href="#">缺货登记</a></li>
 						<li><a href="#">跟踪订单</a></li>
 					</ul>
