@@ -127,5 +127,6 @@ function bdtj() {
 	if(nameVerify && passwordVerify && repeatPasswordVerify && emailVerify && phoneVerify && securityCodeVerify){
 		frm.submit(); //验证通过  提交
 	}else{
+		alert("请填写完整");
 	}
 }

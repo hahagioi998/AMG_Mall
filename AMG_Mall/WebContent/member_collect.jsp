@@ -34,8 +34,8 @@
 				<div class="left_m">
 					<div class="left_m_t t_bg1">订单中心</div>
 					<ul>
-						<li><a href="member_order.jsp">我的订单</a></li>
-						<li><a href="member_address.jsp">收货地址</a></li>
+						<li><a href="order.member">我的订单</a></li>
+						<li><a href="address.member">收货地址</a></li>
 						<li><a href="#">缺货登记</a></li>
 						<li><a href="#">跟踪订单</a></li>
 					</ul>
@@ -43,28 +43,28 @@
 				<div class="left_m">
 					<div class="left_m_t t_bg2">会员中心</div>
 					<ul>
-						<li><a href="member_user.jsp">用户信息</a></li>
-						<li><a href="member_collect.jsp"  class="now">我的收藏</a></li>
-						<li><a href="member_msg.jsp">我的留言</a></li>
-						<li><a href="member_links.jsp">推广链接</a></li>
+						<li><a href="user.member">用户信息</a></li>
+						<li><a href="collect.member" class="now">我的收藏</a></li>
+						<li><a href="msg.member">我的留言</a></li>
+						<li><a href="links.member">推广链接</a></li>
 						<li><a href="#">我的评论</a></li>
 					</ul>
 				</div>
 				<div class="left_m">
 					<div class="left_m_t t_bg3">账户中心</div>
 					<ul>
-						<li><a href="member_safe.jsp">账户安全</a></li>
-						<li><a href="member_packet.jsp">我的红包</a></li>
-						<li><a href="member_money.jsp">资金管理</a></li>
+						<li><a href="safe.member">账户安全</a></li>
+						<li><a href="packet.member">我的红包</a></li>
+						<li><a href="money.member">资金管理</a></li>
 					</ul>
 				</div>
 				<div class="left_m">
 					<div class="left_m_t t_bg4">分销中心</div>
 					<ul>
-						<li><a href="member_member.jsp">我的会员</a></li>
-						<li><a href="member_results.jsp">我的业绩</a></li>
-						<li><a href="member_commission.jsp">我的佣金</a></li>
-						<li><a href="member_cash.jsp">申请提现</a></li>
+						<li><a href="member.member">我的会员</a></li>
+						<li><a href="results.member">我的业绩</a></li>
+						<li><a href="commission.member">我的佣金</a></li>
+						<li><a href="cash.member">申请提现</a></li>
 					</ul>
 				</div>
 			</div>
@@ -72,7 +72,7 @@
 				<p></p>
 				<div class="mem_tit">
 					<span class="fr"
-						style="font-size: 12px; color: #55555; font-family: '宋体'; margin-top: 5px;">共发现4件</span>我的收藏
+						style="font-size: 12px; color: #55555; font-family: '宋体'; margin-top: 5px;">共发现4件</span>收藏的宝贝
 				</div>
 				<table border="0" class="order_tab" style="width: 930px;"
 					cellspacing="0" cellpadding="0">
@@ -126,9 +126,63 @@
 							href="#">删除</a></td>
 					</tr>
 				</table>
-
-
-
+				<p></p>
+				<div class="mem_tit">
+					<span class="fr"
+						style="font-size: 12px; color: #55555; font-family: '宋体'; margin-top: 5px;">共发现4家</span>收藏的店铺
+				</div>
+				<table border="0" class="order_tab" style="width: 930px;"
+					cellspacing="0" cellpadding="0">
+					<tr>
+						<td align="center" width="420">商品名称</td>
+						<td align="center" width="180">价格</td>
+						<td align="center" width="270">操作</td>
+					</tr>
+					<tr>
+						<td style="font-family: '宋体';">
+							<div class="sm_img">
+								<img src="images/simg.jpg" width="48" height="48" />
+							</div>法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只
+						</td>
+						<td align="center">￥456.00</td>
+						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
+							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
+							href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td style="font-family: '宋体';">
+							<div class="sm_img">
+								<img src="images/simg.jpg" width="48" height="48" />
+							</div>法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只
+						</td>
+						<td align="center">￥456.00</td>
+						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
+							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
+							href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td style="font-family: '宋体';">
+							<div class="sm_img">
+								<img src="images/simg.jpg" width="48" height="48" />
+							</div>法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只
+						</td>
+						<td align="center">￥456.00</td>
+						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
+							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
+							href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td style="font-family: '宋体';">
+							<div class="sm_img">
+								<img src="images/simg.jpg" width="48" height="48" />
+							</div>法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只
+						</td>
+						<td align="center">￥456.00</td>
+						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
+							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
+							href="#">删除</a></td>
+					</tr>
+				</table>
 			</div>
 		</div>
 		<!--End 用户中心 End-->

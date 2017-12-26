@@ -93,6 +93,12 @@
     <servlet-name>CartServlet</servlet-name>
     <servlet-class>com.hafele.servlet.CartServlet</servlet-class>
   </servlet>
+  
+  <!-- 管理中心 -->
+  <servlet>
+  	<servlet-name>MemberServlet</servlet-name>
+  	<servlet-class>com.hafele.servlet.MemberServlet</servlet-class>
+  </servlet>
    
   <servlet-mapping>
     <servlet-name>userList</servlet-name>
@@ -137,6 +143,10 @@
   <servlet-mapping>
     <servlet-name>CartServlet</servlet-name>
     <url-pattern>*.cart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MemberServlet</servlet-name>
+  	<url-pattern>*.member</url-pattern>
   </servlet-mapping>
   
 </web-app>

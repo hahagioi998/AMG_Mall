@@ -87,7 +87,7 @@
 		<c:if test="${username != null }">
 			<span class="fr"> <span class="fl">Hi,<a href="#">${username}</a>&nbsp;
 					<a href="logout.user" style="color: #ff4e00;">退出</a>&nbsp;|&nbsp;<a
-					href="member_order.jsp">我的订单</a>&nbsp;|
+					href="order.member">我的订单</a>&nbsp;|
 			</span>
 		</c:if>
 		<span class="ss">

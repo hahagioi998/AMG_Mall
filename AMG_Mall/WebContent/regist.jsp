@@ -146,7 +146,7 @@
 						</tr>
 						<tr height="60">
 							<td>&nbsp;</td>
-							<td><input type="submit" value="立即注册" class="log_btn"
+							<td><input type="button" value="立即注册" class="log_btn"
 								onclick="bdtj()" /></td>
 						</tr>
 					</table>
