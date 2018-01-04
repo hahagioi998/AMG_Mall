@@ -59,8 +59,13 @@ public class UserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
 		UserBean u = new UserBean();
-		u.setUserName(username);u.setPassword(password);
+		u.setUserName(username);
+		u.setPassword(password);
+		u.setEmail(email);
+		u.setPhone(phone);
 		int i = UsersDao.adduser(u);
 		if(i==1){
 			//×¢²á³É¹¦

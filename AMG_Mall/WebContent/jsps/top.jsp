@@ -4,77 +4,8 @@
 	<div class="sou">
 		<!--Begin 所在收货地区 Begin-->
 		<span class="s_city_b"> <span class="fl">送货至：</span> <span
-			class="s_city"> <span>广东</span>
-				<div class="s_city_bg">
-					<div class="s_city_t"></div>
-					<div class="s_city_c">
-						<h2>请选择所在的收货地区</h2>
-						<table border="0" class="c_tab"
-							style="width: 235px; margin-top: 10px;" cellspacing="0"
-							cellpadding="0">
-							<tr>
-								<th>A</th>
-								<td class="c_h"><span>安徽</span><span>澳门</span></td>
-							</tr>
-							<tr>
-								<th>B</th>
-								<td class="c_h"><span>北京</span></td>
-							</tr>
-							<tr>
-								<th>C</th>
-								<td class="c_h"><span>重庆</span></td>
-							</tr>
-							<tr>
-								<th>F</th>
-								<td class="c_h"><span>福建</span></td>
-							</tr>
-							<tr>
-								<th>G</th>
-								<td class="c_h"><span class="c_check">广东</span><span>广西</span><span>贵州</span><span>甘肃</span></td>
-							</tr>
-							<tr>
-								<th>H</th>
-								<td class="c_h"><span>河北</span><span>河南</span><span>黑龙江</span><span>海南</span><span>湖北</span><span>湖南</span></td>
-							</tr>
-							<tr>
-								<th>J</th>
-								<td class="c_h"><span>江苏</span><span>吉林</span><span>江西</span></td>
-							</tr>
-							<tr>
-								<th>L</th>
-								<td class="c_h"><span>辽宁</span></td>
-							</tr>
-							<tr>
-								<th>N</th>
-								<td class="c_h"><span>内蒙古</span><span>宁夏</span></td>
-							</tr>
-							<tr>
-								<th>Q</th>
-								<td class="c_h"><span>青海</span></td>
-							</tr>
-							<tr>
-								<th>S</th>
-								<td class="c_h"><span>上海</span><span>山东</span><span>山西</span><span>四川</span><span>陕西</span></td>
-							</tr>
-							<tr>
-								<th>T</th>
-								<td class="c_h"><span>台湾</span><span>天津</span></td>
-							</tr>
-							<tr>
-								<th>X</th>
-								<td class="c_h"><span>西藏</span><span>香港</span><span>新疆</span></td>
-							</tr>
-							<tr>
-								<th>Y</th>
-								<td class="c_h"><span>云南</span></td>
-							</tr>
-							<tr>
-								<th>Z</th>
-								<td class="c_h"><span>浙江</span></td>
-							</tr>
-						</table>
-					</div>
-				</div>
+			class="s_city"> <span id="allmap" style="display:none;"></span><span id="place">广州市</span>
+			<div id="in_city" style="display: none"></div>
 		</span>
 		</span>
 		<!--End 所在收货地区 End-->
@@ -85,23 +16,37 @@
 			</span>
 		</c:if>
 		<c:if test="${username != null }">
-			<span class="fr"> <span class="fl">Hi,<a href="#">${username}</a>&nbsp;
+			<span class="fr"> <span class="fl">Hi,<a href="user.member">${username}</a>&nbsp;
 					<a href="logout.user" style="color: #ff4e00;">退出</a>&nbsp;|&nbsp;<a
 					href="order.member">我的订单</a>&nbsp;|
 			</span>
 		</c:if>
 		<span class="ss">
 			<div class="ss_list">
-				<a href="#">收藏夹</a>
-				<div class="ss_list_bg">
-					<div class="s_city_t"></div>
-					<div class="ss_list_c">
-						<ul>
-							<li><a href="#">收藏的店铺</a></li>
-							<li><a href="#">收藏的宝贝</a></li>
-						</ul>
+				<c:if test="${username == null }">
+					<a href="login.jsp">收藏夹</a>
+					<div class="ss_list_bg">
+						<div class="s_city_t"></div>
+						<div class="ss_list_c">
+							<ul>
+								<li><a href="login.jsp">收藏的店铺</a></li>
+								<li><a href="login.jsp">收藏的宝贝</a></li>
+							</ul>
+						</div>
 					</div>
-				</div>
+				</c:if>
+				<c:if test="${username != null }">
+					<a href="collect.member">收藏夹</a>
+					<div class="ss_list_bg">
+						<div class="s_city_t"></div>
+						<div class="ss_list_c">
+							<ul>
+								<li><a href="collect.member">收藏的店铺</a></li>
+								<li><a href="collect.member">收藏的宝贝</a></li>
+							</ul>
+						</div>
+					</div>
+				</c:if>
 			</div>
 			<div class="ss_list">
 				<a href="#">客户服务</a>
@@ -131,10 +76,13 @@
 					</div>
 				</div>
 			</div>
-		</span> <span class="fl">|&nbsp;关注我们：</span> <span class="s_sh"><a
-			href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span> <span
-			class="fr">|&nbsp;<a href="#">手机版&nbsp;<img
-				src="images/s_tel.png" align="absmiddle" /></a></span> </span>
+		</span>
+		<span class="fl">|&nbsp;关注我们：</span>
+		<span class="s_sh">
+			<a href="#" class="sh1">新浪</a>
+			<a href="#" class="sh2">微信</a>
+		</span>
+		<span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="images/s_tel.png" align="absmiddle" /></a></span>
 	</div>
 </div>
 <div class="top">
@@ -152,7 +100,7 @@
 	<div class="i_car">
 		<div class="car_t">
 			<a rel="nofollow" href="index.cart" class="shopping_cart"
-				id="shopping_cart" style="display:"> 购物车 [ <span>3</span> ]
+				id="shopping_cart" style="display:">&nbsp;&nbsp;&nbsp;购物车
 			</a>
 		</div>
 		<div class="car_bg">
@@ -202,6 +150,8 @@
 	</div>
 </div>
 <!--End 头部代码（最顶部、logo、搜索、导航菜单） End-->
+<script type="text/javascript" src="js/cityTemplate.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=VMZKb8WGIDGISvZhGow7Yzln72MNwUN6"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("input.s_btn").click(function() {
@@ -252,4 +202,40 @@
 			return num;/*如果当前小数点后的位数等于或小于要保留的位数，那么无需处理，直接返回*/
 		}
 	}
+	
+	//城市选择
+	var cityA = $(".city_a_le1 a"); //城市
+	var pla = $("#place");  //出发地
+	// 默认值
+	inCity.width = "296";  //城市选择框  宽
+	inCity.height = "auto";  //城市选择框  高
+	inCity.id = "#in_city";  //城市选择框  父级ID
+	inCity.Children = '.city_a_le1';  //城市名box
+	// 初始化 城市HTML模板
+	$(inCity.id).prepend(inCity._template.join(''));
+	inCity.Hot(cityA);
+	
+	//城市 导航
+	var apay = $(".screen a");
+
+	var placeThis; //当前选择标签
+	apay.click(function(obj){  //城市导航
+		inCity.payment($(this));
+	})
+
+	inCity.place(pla); //城市名
+	inCity.cityClick(cityA); //显示赋值城市
+	
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.331398,39.897445);
+	map.centerAndZoom(point,12);
+
+	function myFun(result){
+		var cityName = result.name;
+		map.setCenter(cityName);
+		document.getElementById("place").innerHTML=cityName
+	}
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
 </script>

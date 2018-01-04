@@ -134,8 +134,8 @@
 				<table border="0" class="order_tab" style="width: 930px;"
 					cellspacing="0" cellpadding="0">
 					<tr>
-						<td align="center" width="420">商品名称</td>
-						<td align="center" width="180">价格</td>
+						<td align="center" width="420">店铺名称</td>
+						<td align="center" width="180">描述</td>
 						<td align="center" width="270">操作</td>
 					</tr>
 					<tr>
@@ -146,7 +146,6 @@
 						</td>
 						<td align="center">￥456.00</td>
 						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
-							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
 							href="#">删除</a></td>
 					</tr>
 					<tr>
@@ -157,7 +156,6 @@
 						</td>
 						<td align="center">￥456.00</td>
 						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
-							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
 							href="#">删除</a></td>
 					</tr>
 					<tr>
@@ -168,7 +166,6 @@
 						</td>
 						<td align="center">￥456.00</td>
 						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
-							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
 							href="#">删除</a></td>
 					</tr>
 					<tr>
@@ -179,7 +176,6 @@
 						</td>
 						<td align="center">￥456.00</td>
 						<td align="center"><a href="#">关注</a>&nbsp; &nbsp; <a
-							href="#" style="color: #ff4e00;">加入购物车</a>&nbsp; &nbsp; <a
 							href="#">删除</a></td>
 					</tr>
 				</table>

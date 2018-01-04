@@ -23,7 +23,7 @@
 
 .s_city {
 	height: 35px;
-	background: url(../images/t_arrow.gif) no-repeat right center;
+	background: url(../images/dsfw.png) no-repeat right center;
 	float: left;
 	padding-right: 15px;
 	cursor: pointer;
@@ -382,4 +382,82 @@ ul.cars li .price {
 
 .price_a a {
 	color: #FFF;
+}
+
+a:hover {
+	opacity: 0.8;
+	filter: alpha(opacity = 80);
+	text-decoration: blink
+}
+
+.clear {
+	clear: both;
+}
+
+#in_city {
+	background: #ddd;
+	position: absolute;
+	z-index: 999;
+	border: solid 1px #d7d7d7;
+	background: #fff;
+	padding-bottom: 6px;
+}
+
+.screen {
+	overflow: hidden;
+}
+
+.screen a {
+	float: left;
+	color: #129ace;
+	padding: 1px 12.6px;
+	text-align: center;
+	border-bottom: solid 1px #c92436;
+}
+
+.screen a:hover {
+	color: #c92436;
+}
+
+.screen .shar {
+	color: #404040;
+	border: solid 1px #c92436;
+	border-bottom: none;
+}
+
+.city_a_le1 {
+	padding: 10px;
+	overflow: hidden;
+}
+
+.city_a_le1 a {
+	float: left;
+	width: 20%;
+	margin: 2px 0;
+}
+
+.Letter span {
+	width: 12%;
+	float: left;
+	text-align: center;
+	padding: 2px 0;
+}
+
+.Letter div {
+	width: 88%;
+	float: left;
+}
+
+.city_a_le1 a:hover {
+	color: #c92436;
+}
+
+.Letter div a {
+	width: 25%;
+}
+
+#in_city h1 {
+	padding: 10px 80px;
+	color: #ababab;
+	text-indent: 3%;
 }

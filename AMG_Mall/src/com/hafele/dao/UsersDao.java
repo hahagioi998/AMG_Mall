@@ -53,7 +53,7 @@ public class UsersDao {
 	 * @return i
 	 */
 	public static int adduser(UserBean u){
-		String sql = "insert into t_user (userName,password)values(?,?)";
+		String sql = "insert into t_user (userName,password,phone,email)values(?,?,?,?)";
 		Connection con = Conn.getCon();
 		PreparedStatement ps = null;
 		int i = 0;
@@ -61,6 +61,8 @@ public class UsersDao {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, u.getUserName());
 			ps.setString(2, u.getPassword());
+			ps.setString(3, u.getPhone());
+			ps.setString(4, u.getEmail());
 			i = ps.executeUpdate();
 			
 		} catch (SQLException e) {
