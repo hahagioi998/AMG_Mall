@@ -134,4 +134,28 @@ public class UsersDao {
 		}
 		return id;
 	}
+
+	public static String adminLogin(String userName) {
+		String sql = "select * from t_user where userName=? and userType=0";
+		Connection con = Conn.getCon();
+		PreparedStatement ps = null;
+		String password = null;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userName);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()){
+			password = rs.getString("password");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return password;
+	}
 }

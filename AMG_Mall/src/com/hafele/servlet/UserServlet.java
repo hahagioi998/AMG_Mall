@@ -122,6 +122,45 @@ public class UserServlet extends HttpServlet {
 	}
 	
 	/**
+	 * 管理员登录
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void adminLogin(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String SecurityCode = request.getParameter("SecurityCode"); //接收到的验证码
+		String name = request.getParameter("username");
+		String password = request.getParameter("password");
+		String securityCode = com.hafele.util.SecurityCode.getImg(request, response);
+		if(SecurityCode.equalsIgnoreCase(securityCode)){
+			System.out.println("验证码验证通过");
+			//验证码正确
+			String password2 = UsersDao.adminLogin(name);
+			System.out.println("接收到的名字："+name);
+			System.out.println("接收的密码为："+password);
+			System.out.println("返回的密码为："+password2);
+			if(password.equals(password2)){
+				//密码正确
+				request.getSession().setAttribute("stateOK", 0);
+				response.sendRedirect("admin/main.jsp");
+				request.getSession().setAttribute("adminName", name);
+			}else{
+				//密码错误 或者非管理员
+				request.getSession().setAttribute("state", 2);
+				response.sendRedirect("/AMG_Mall/admin");
+			}
+		}else{
+			//验证码错误
+			request.getSession().setAttribute("state", 1);
+			response.sendRedirect("/AMG_Mall/admin");
+		}
+		
+		
+	}
+	
+	/**
 	 * 用户登录
 	 * @param request
 	 * @param response
