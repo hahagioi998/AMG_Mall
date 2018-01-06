@@ -24,6 +24,7 @@
 <link href="css/top.css" rel="stylesheet" />
 <link href="css/footer.css" rel="stylesheet" />
 <link href="css/login_regist.css" rel="stylesheet" />
+<link href="js/layui/css/modules/layer/default/layer.css" rel="stylesheet" />
 
 <script type="text/javascript" src="js/jquery-1.11.1.min_044d0927.js"></script>
 <script type="text/javascript" src="js/jquery.bxslider_e88acd1b.js"></script>
@@ -34,6 +35,7 @@
 <script type="text/javascript" src="js/select.js"></script>
 <script type="text/javascript" src="js/lrscroll.js"></script>
 <script type="text/javascript" src="js/lrscroll_1.js"></script>
+<script src="js/layui/lay/modules/layer.js" charset="utf-8"></script>
 </head>
 <body>
 	<script type="text/javascript">

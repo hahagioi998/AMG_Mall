@@ -127,6 +127,10 @@ function bdtj() {
 	if(nameVerify && passwordVerify && repeatPasswordVerify && emailVerify && phoneVerify && securityCodeVerify){
 		frm.submit(); //验证通过  提交
 	}else{
-		alert("请填写完整");
+		layer.open({
+			title: '提示'
+				,content: '请填写完整'
+		});  
+//		alert("请填写完整");
 	}
 }

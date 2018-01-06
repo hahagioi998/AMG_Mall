@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/jquery-easyui-1.3.3/themes/icon.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/js/layui/css/layui.css"  media="all">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/time.css" type="text/css" />
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.min.js"></script>
 <script type="text/javascript"
@@ -22,7 +23,7 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
 <script src="${pageContext.request.contextPath}/js/layui/layui.js" charset="utf-8"></script>
-
+<script src="${pageContext.request.contextPath}/js/time.js"></script>
 <script type="text/javascript">
 	var url;
 
@@ -124,8 +125,9 @@
 		<div class="easyui-tabs" fit="true" border="false" id="tabs">
 			<div title="首页" data-options="iconCls:'icon-home'">
 				<div align="center" style="padding-top: 100px;">
-					<font color="red" size="10">欢迎使用爱码购后台管理系统</font>
-					<div class="layui-inline" id="test-n1"></div>
+					<!-- <font color="red" size="10">欢迎使用爱码购后台管理系统</font> -->
+					<div id="screen"></div>
+					<div class="layui-inline" id="test-n1" style="right:-38%"></div>
 				</div>
 			</div>
 		</div>
