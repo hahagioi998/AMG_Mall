@@ -115,7 +115,7 @@
 			<tr>
 				<td width="50%"><img
 					src="${pageContext.request.contextPath}/images/logo_lucency.png" /></td>
-				<td valign="bottom" align="right" width="50%"><font size="3">&nbsp;&nbsp;<strong>欢迎：</strong>${adminName }</font></td>
+				<td valign="bottom" align="right" width="50%"><font style="margin-right: 20px;" size="3">&nbsp;&nbsp;<strong>欢迎：</strong>${adminName }</font></td>
 			</tr>
 		</table>
 	</div>
@@ -123,7 +123,7 @@
 		<div class="easyui-tabs" fit="true" border="false" id="tabs">
 			<div title="首页" data-options="iconCls:'icon-home'">
 				<div align="center" style="padding-top: 100px;">
-					<!-- <font color="red" size="10">欢迎使用爱码购后台管理系统</font> -->
+					<div style="margin-top: -50px;"><img src="${pageContext.request.contextPath}/images/bg_title_logo.png" /></div>
 					<div class="layui-inline" id="test-n1"></div>
 				</div>
 			</div>
