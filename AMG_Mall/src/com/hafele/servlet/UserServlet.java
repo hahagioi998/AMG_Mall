@@ -18,6 +18,7 @@ import com.hafele.dao.ShoppingCartDao;
 import com.hafele.dao.UsersDao;
 import com.hafele.util.ResponseUtil;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 /**
@@ -203,6 +204,41 @@ public class UserServlet extends HttpServlet {
 			//登录失败密码输入有误
 			request.getSession().setAttribute("loginFail", username);
 			response.sendRedirect("login.jsp"); //重定向到登录
+		}
+	}
+	
+	/**
+	 * 查询所有 and 模糊搜索
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void sel(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String p = request.getParameter("page"); //需求页码
+		String rows = request.getParameter("rows"); //每页多少条
+		String sel = request.getParameter("s_userName"); //如果是查询这不为空
+		System.out.println("收到请求："+p+"  "+rows+"  "+sel);
+		if(sel==null){
+			JSONObject result = new JSONObject();
+			String sql = "select count(*) count from t_user";
+			int count = UsersDao.count(sql); //获取条数
+			
+			JSONArray jsonArray = UsersDao.selAll(Integer.parseInt(p), Integer.parseInt(rows)); //获取dao返回的json集合
+			
+			result.put("rows", jsonArray);
+			result.put("total", count);
+			ResponseUtil.write(response, result);
+		}else{
+			JSONObject result = new JSONObject();
+			String sql = "select count(*) count from t_user where userName like '%"+sel+"%'";
+			System.out.println("查询行数sql为："+sql);
+			int count = UsersDao.count(sql); //获取条数
+			JSONArray jsonArray = UsersDao.nameSel(Integer.parseInt(p), Integer.parseInt(rows),sel); //获取dao返回的json集合
+			result.put("rows", jsonArray);
+			result.put("total", count);
+			ResponseUtil.write(response, result);
 		}
 	}
 	

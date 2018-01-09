@@ -113,7 +113,7 @@
 	<div region="north" style="height: 78px; background-color: #E0ECFF">
 		<table style="padding: 5px;" width="100%">
 			<tr>
-				<td width="50%"><img
+				<td width="50%"><img style="margin-top: 10px;"
 					src="${pageContext.request.contextPath}/images/logo_lucency.png" /></td>
 				<td valign="bottom" align="right" width="50%"><font style="margin-right: 20px;" size="3">&nbsp;&nbsp;<strong>欢迎：</strong>${adminName }</font></td>
 			</tr>
@@ -152,13 +152,17 @@
 					href="javascript:openTab('商品小类管理','productSmallTypeManage.jsp','icon-product')"
 					class="easyui-linkbutton"
 					data-options="plain:true,iconCls:'icon-manage'"
-					style="width: 150px;">管理商品小类</a>
+					style="width: 150px;">管理商品小类</a> <a
+					href="javascript:openTab('商品小类管理','productSmallTypeManage.jsp','icon-product')"
+					class="easyui-linkbutton"
+					data-options="plain:true,iconCls:'icon-manage'"
+					style="width: 150px;">管理商品细类</a>
 			</div>
 			<div title="订单管理" data-options="iconCls:'icon-order'"
 				style="padding: 10px">
-				<a href="javascript:openTab('订单管理','orderManage.jsp','icon-order')"
+				<a href="javascript:openTab('订单管理','orderManage.jsp','icon-manage-order')"
 					class="easyui-linkbutton"
-					data-options="plain:true,iconCls:'icon-manage'"
+					data-options="plain:true,iconCls:'icon-manage-order'"
 					style="width: 150px;">管理订单</a>
 			</div>
 			<!-- <div title="留言管理" data-options="iconCls:'icon-comment'" style="padding:10px">
@@ -166,9 +170,9 @@
 		</div> -->
 			<div title="首页管理" data-options="iconCls:'icon-notice'"
 				style="padding: 10px">
-				<a href="javascript:openTab('幻灯管理','slide.jsp','icon-notice')"
+				<a href="javascript:openTab('幻灯管理','slide.jsp','icon-slide')"
 					class="easyui-linkbutton"
-					data-options="plain:true,iconCls:'icon-manage'"
+					data-options="plain:true,iconCls:'icon-slide'"
 					style="width: 150px;">管理幻灯</a>
 				<!-- <a href="javascript:openTab('公告管理','noticeManage.jsp','icon-notice')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-manage'" style="width: 150px;">管理公告</a>
 			<a href="javascript:openTab('新闻管理','newsManage.jsp','icon-news')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-manage'" style="width: 150px;">管理新闻</a> -->

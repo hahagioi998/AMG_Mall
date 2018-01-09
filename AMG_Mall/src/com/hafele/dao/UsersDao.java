@@ -7,6 +7,9 @@ import java.sql.SQLException;
 
 import com.hafele.bean.UserBean;
 import com.hafele.util.Conn;
+import com.hafele.util.JsonUtil;
+
+import net.sf.json.JSONArray;
 
 /**
 * @author Dragon Wen E-mail:18475536452@163.com
@@ -157,5 +160,44 @@ public class UsersDao {
 			}
 		}
 		return password;
+	}
+
+	public static JSONArray selAll(int p,int pageSize) {
+		String sql = "select top "+pageSize+" * from t_user where id not in(select top "+(p-1)*pageSize+" id from t_user)";
+		return sel(sql);
+	}
+
+	public static JSONArray nameSel(int p,int pageSize,String username) {
+		String sql = "select top "+pageSize+" * from t_user where id not in(select top "+(p-1)*pageSize+" id from t_user where userName like '%"+username+"%') and userName like '%"+username+"%'";
+		return sel(sql);
+	}
+
+	/**
+	 * 查询sql 返回json集合
+	 * @param sql
+	 * @return
+	 */
+	private static JSONArray sel(String sql) {
+		System.out.println("sql查询语句："+sql);
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		JSONArray jsonArray = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			jsonArray = JsonUtil.formatRsToJsonArray(rs);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return jsonArray;
 	}
 }

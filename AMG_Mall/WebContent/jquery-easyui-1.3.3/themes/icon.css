@@ -1,3 +1,36 @@
+.icon-manage-order{
+	background:url('icons/manager_order.png') no-repeat center center;
+}
+.icon-slide{
+	background:url('icons/slide.png') no-repeat center center;
+}
+.icon-refresh{
+	background:url('icons/refresh.png') no-repeat center center;
+}
+.icon-exit{
+	background:url('icons/exit.png') no-repeat center center;
+}
+.icon-modifyPassword{
+	background:url('icons/password.png') no-repeat center center;
+}
+.icon-item{
+	background:url('icons/item.png') no-repeat center center;
+}
+.icon-notice{
+	background:url('icons/notice.png') no-repeat center center;
+}
+.icon-order{
+	background:url('icons/order.png') no-repeat center center;
+}
+.icon-product{
+	background:url('icons/product.png') no-repeat center center;
+}
+.icon-manage{
+	background:url('icons/manager.png') no-repeat center center;
+}
+.icon-user{
+	background:url('icons/user.png') no-repeat center center;
+}
 .icon-home{
 	background:url('icons/home.png') no-repeat center center;
 }
