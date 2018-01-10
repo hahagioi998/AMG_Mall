@@ -243,6 +243,101 @@ public class UserServlet extends HttpServlet {
 	}
 	
 	/**
+	 * 添加管理员用户
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void add(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String userName = request.getParameter("user.userName");
+		String trueName = request.getParameter("user.trueName");
+		String sex = request.getParameter("user.sex");
+		String birthday = request.getParameter("user.birthday");
+		String statusID = request.getParameter("user.statusID");
+		String phone = request.getParameter("user.phone");
+		String address = request.getParameter("user.address");
+		String email = request.getParameter("user.email");
+		String password = request.getParameter("user.password");
+		System.out.println("添加用户接收到："+userName+trueName+sex+birthday+statusID+phone+address+email+ password);
+		
+		UserBean u = new UserBean(userName, trueName, sex, birthday, statusID, phone, address, email, 1+"", password);
+		int i = UsersDao.add(u);
+		JSONObject result=new JSONObject();
+		if(i==0){
+			result.put("errorMsg", "删除失败");
+		}else{
+			result.put("success", "true");
+		}
+		ResponseUtil.write(response, result);
+	}
+	
+	/**
+	 * 修改管理员用户
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void update(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String userName = request.getParameter("user.userName");
+		String trueName = request.getParameter("user.trueName");
+		String sex = request.getParameter("user.sex");
+		String birthday = request.getParameter("user.birthday");
+		String statusID = request.getParameter("user.statusID");
+		String phone = request.getParameter("user.phone");
+		String address = request.getParameter("user.address");
+		String email = request.getParameter("user.email");
+		String password = request.getParameter("user.password");
+		int id = Integer.parseInt(request.getParameter("user.id"));
+		UserBean u = new UserBean(userName, trueName, sex, birthday, statusID, phone, address, email, 1+"", password);
+		u.setId(id);
+		int i = UsersDao.update(u);
+		JSONObject result=new JSONObject();
+		if(i==0){
+			result.put("errorMsg", "删除失败");
+		}else{
+			result.put("success", "true");
+		}
+		ResponseUtil.write(response, result);
+	}
+	
+	/**
+	 * 单个删除 and 多个删除
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void del(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("ids");
+		int s = id.indexOf(",");
+		int i = 0;
+		if(s!=-1){
+			//是个数组
+			i = UsersDao.manyDel(id);
+			/*String [] ids = id.split(",");
+			for(String j : ids){
+				usersDao.del(Integer.parseInt(j));
+			}
+			i = 1;*/
+		}else{
+			i = UsersDao.del(Integer.parseInt(id));
+		}
+		System.out.println("接收到的为："+id);
+		JSONObject result=new JSONObject();
+		if(i==0){
+			result.put("errorMsg", "删除失败");
+		}else{
+			result.put("success", "true");
+		}
+		ResponseUtil.write(response, result);
+	}
+	
+	/**
 	 * 退出登录
 	 * @param request
 	 * @param response

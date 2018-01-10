@@ -200,4 +200,129 @@ public class UsersDao {
 		}
 		return jsonArray;
 	}
+
+	/**
+	 * 添加管理员用户
+	 * @param u
+	 * @return
+	 */
+	public static int add(UserBean u){
+		String sql = "insert into t_user values(?,?,?,?,?,?,?,?,?,?)";
+		Connection con = Conn.getCon();
+		PreparedStatement ps = null;
+		int i = 0;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, u.getUserName());
+			ps.setString(2, u.getTrueName());
+			ps.setString(3, u.getSex());
+			ps.setString(4, u.getBirthday());
+			ps.setString(5, u.getStatusID());
+			ps.setString(6, u.getPhone());
+			ps.setString(7, "");
+			ps.setString(8, u.getEmail());
+			ps.setInt(9, Integer.parseInt(u.getUserType()));
+			ps.setString(10, u.getPassword());
+			i = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return i;
+	}
+
+	/**
+	 * 后台修改数据
+	 * @param u
+	 * @return
+	 */
+	public static int update(UserBean u) {
+		String sql = "update t_user "
+				+"set userName=?,trueName=?,sex=?,birthday=?,statusID=?,phone=?,address=?,email=?,password=? "
+				+"where id=? ";
+			Connection con = Conn.getCon();
+			PreparedStatement ps = null;
+			int i = 0;
+			try {
+				ps = con.prepareStatement(sql);
+				ps.setString(1, u.getUserName());
+				ps.setString(2, u.getTrueName());
+				ps.setString(3, u.getSex());
+				ps.setString(4, u.getBirthday());
+				ps.setString(5, u.getStatusID());
+				ps.setString(6, u.getPhone());
+				ps.setString(7, u.getAddress());
+				ps.setString(8, u.getEmail());
+				ps.setString(9, u.getPassword());
+				ps.setInt(10, u.getId());
+				i = ps.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			return i;
+	}
+
+	/**
+	 * 删除多个
+	 * @param ids
+	 * @return
+	 */
+	public static int manyDel(String ids) {
+		String sql = "delete from t_user where id in("+ids+")";
+		Connection con = Conn.getCon();
+		PreparedStatement ps = null;
+		int i = 0;
+		try {
+			ps = con.prepareStatement(sql);
+			i = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return i;
+	}
+
+	/**
+	 * 根据ID删除
+	 * @param id
+	 * @return
+	 */
+	public static int del(int id) {
+		System.out.println("接受到要删除的ID："+id);
+		String sql = "delete t_user where id=?";
+		Connection con = Conn.getCon();
+		PreparedStatement ps = null;
+		int i = 0;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			i = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return i;
+	}
 }
