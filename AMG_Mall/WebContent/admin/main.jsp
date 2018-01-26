@@ -133,7 +133,7 @@
 		<div class="easyui-accordion" data-options="fit:true,border:false">
 			<div title="用户管理" data-options="selected:true,iconCls:'icon-user'"
 				style="padding: 10px;">
-				<a href="javascript:openTab('用户管理','userManage.jsp','icon-user')"
+				<a href="javascript:openTab('用户管理','userManage.jsp','icon-manage')"
 					class="easyui-linkbutton"
 					data-options="plain:true,iconCls:'icon-manage'"
 					style="width: 150px;">管理用户</a>
@@ -145,17 +145,17 @@
 					class="easyui-linkbutton"
 					data-options="plain:true,iconCls:'icon-manage'"
 					style="width: 150px;">管理商品</a> <a
-					href="javascript:openTab('商品大类管理','productBigTypeManage.jsp','icon-product')"
+					href="javascript:openTab('商品大类管理','productBigTypeManage.jsp','icon-bigType')"
 					class="easyui-linkbutton"
-					data-options="plain:true,iconCls:'icon-manage'"
+					data-options="plain:true,iconCls:'icon-bigType'"
 					style="width: 150px;">管理商品大类</a> <a
-					href="javascript:openTab('商品小类管理','productSmallTypeManage.jsp','icon-product')"
+					href="javascript:openTab('商品小类管理','productSmallTypeManage.jsp','icon-smallType')"
 					class="easyui-linkbutton"
-					data-options="plain:true,iconCls:'icon-manage'"
+					data-options="plain:true,iconCls:'icon-smallType'"
 					style="width: 150px;">管理商品小类</a> <a
-					href="javascript:openTab('商品小类管理','productSmallTypeManage.jsp','icon-product')"
+					href="javascript:openTab('商品小类管理','productSmallTypeManage.jsp','icon-detailType')"
 					class="easyui-linkbutton"
-					data-options="plain:true,iconCls:'icon-manage'"
+					data-options="plain:true,iconCls:'icon-detailType'"
 					style="width: 150px;">管理商品细类</a>
 			</div>
 			<div title="订单管理" data-options="iconCls:'icon-order'"

@@ -11,6 +11,9 @@ import com.hafele.bean.BigTypeBean;
 import com.hafele.bean.GoodsBean;
 import com.hafele.bean.SmallTypeBean;
 import com.hafele.util.Conn;
+import com.hafele.util.JsonUtil;
+
+import net.sf.json.JSONArray;
 
 /**
 * @author Dragon Wen E-mail:18475536452@163.com
@@ -135,6 +138,79 @@ public class BigTypeDao {
 			}
 		}
 		return name;
+	}
+
+	/**
+	 * 查询总行数
+	 * @return
+	 */
+	@SuppressWarnings("unused")
+	public static int count(String sql) {
+		Connection con = Conn.getCon();
+		int i = 0;
+		ResultSet rs = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			if(rs!=null){
+				i = rs.getInt("count");
+			}else{
+				i = 0;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
+		System.out.println("查询到的用户行数为："+i);
+		return i;
+	}
+
+	/**
+	 * 查询全部
+	 * @param p
+	 * @param pageSize
+	 * @return
+	 */
+	public static JSONArray selAll(int p,int pageSize) {
+		String sql = "select top "+pageSize+" * from t_bigType where id not in(select top "+(p-1)*pageSize+" id from t_bigType)";
+		return sel(sql);
+	}
+	
+	/**
+	 * 查询sql 返回json集合
+	 * @param sql
+	 * @return
+	 */
+	public static JSONArray sel(String sql){
+		System.out.println("sql查询语句："+sql);
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		JSONArray jsonArray = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			jsonArray = JsonUtil.formatRsToJsonArray(rs);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return jsonArray;
+		
 	}
 
 }

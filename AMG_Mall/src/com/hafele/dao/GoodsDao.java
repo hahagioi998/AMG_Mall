@@ -10,6 +10,9 @@ import java.util.List;
 import com.hafele.bean.GoodsBean;
 import com.hafele.bean.PageBean;
 import com.hafele.util.Conn;
+import com.hafele.util.JsonUtil;
+
+import net.sf.json.JSONArray;
 
 /**
 * @author Dragon Wen E-mail:18475536452@163.com
@@ -637,6 +640,52 @@ public class GoodsDao {
 	}
 		System.out.println("查询到的用户行数为："+i);
 		return i;
+	}
+
+	public static JSONArray selAll(int p, int pageSize) {
+		String sql = "select top "+pageSize+" t_goods.*,t_smallType.name smallTypeName,t_bigType.name bigTypeName from t_goods,t_smallType,t_bigType "
+				+"where t_smallType.id = t_goods.smallTypeId and t_bigType.id = t_goods.bigTypeId and "
+				+"t_goods.id not in( "
+				+"select top "+(p-1)*pageSize+" t_goods.id from t_goods order by t_goods.id desc "
+				+") order by t_goods.id desc";
+		return sel(sql);
+	}
+	
+	public static JSONArray nameSel(int p,int pageSize,String name) {
+		String sql = "select top "+pageSize+" t_goods.*,t_smallType.name smallTypeName,t_bigType.name bigTypeName "
+				+"from t_goods,t_smallType,t_bigType where t_smallType.id = t_goods.smallTypeId and t_goods.name like '%"+name+"%' and t_bigType.id = t_goods.bigTypeId "
+				+"and t_goods.id not in( select top "+(p-1)*pageSize+" t_goods.id from t_goods where name like '%"+name+"%' order by t_goods.id desc ) order by t_goods.id desc";
+		return sel(sql);
+	}
+	
+	/**
+	 * 查询sql 返回json集合
+	 * @param sql
+	 * @return
+	 */
+	public static JSONArray sel(String sql){
+		System.out.println("sql查询语句："+sql);
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		JSONArray jsonArray = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			jsonArray = JsonUtil.formatRsToJsonArray(rs);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return jsonArray;
+		 
 	}
 
 }

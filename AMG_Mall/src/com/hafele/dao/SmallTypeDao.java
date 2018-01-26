@@ -10,6 +10,9 @@ import java.util.List;
 import com.hafele.bean.DetailTypeBean;
 import com.hafele.bean.SmallTypeBean;
 import com.hafele.util.Conn;
+import com.hafele.util.JsonUtil;
+
+import net.sf.json.JSONArray;
 
 
 /**
@@ -118,5 +121,45 @@ public class SmallTypeDao {
 			}
 		}
 		return name;
+	}
+
+	/**
+	 * 按大类ID查询 返回json
+	 * @param bigTypeId
+	 * @return
+	 */
+	public static JSONArray bigTypeIdsel(int bigTypeId) {
+		String sql = "select * from t_smallType where bigTypeId = "+bigTypeId;
+		return sel(sql);
+	}
+	
+	/**
+	 * 查询sql 返回json集合
+	 * @param sql
+	 * @return
+	 */
+	public static JSONArray sel(String sql){
+		System.out.println("sql查询语句："+sql);
+		Connection con = Conn.getCon();
+		ResultSet rs = null;
+		JSONArray jsonArray = null;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			jsonArray = JsonUtil.formatRsToJsonArray(rs);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return jsonArray;
+		
 	}
 }

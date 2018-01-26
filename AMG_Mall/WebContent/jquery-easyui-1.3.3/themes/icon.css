@@ -1,3 +1,12 @@
+.icon-bigType{
+	background:url('icons/bigType.png') no-repeat center center;
+}
+.icon-smallType{
+	background:url('icons/smallType.png') no-repeat center center;
+}
+.icon-detailType{
+	background:url('icons/detailType.png') no-repeat center center;
+}
 .icon-manage-order{
 	background:url('icons/manager_order.png') no-repeat center center;
 }

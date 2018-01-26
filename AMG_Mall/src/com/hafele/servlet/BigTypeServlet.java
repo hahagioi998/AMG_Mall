@@ -8,6 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hafele.dao.BigTypeDao;
+import com.hafele.util.ResponseUtil;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 /**
 * @author Dragon Wen E-mail:18475536452@163.com
 * @version 创建时间：2017年11月30日 下午3:11:16
@@ -32,4 +38,19 @@ public class BigTypeServlet extends HttpServlet {
 			 e.printStackTrace();
 		}
 	}
+	
+	public void selList(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		JSONArray jsonArray=new JSONArray();
+		JSONObject jsonObject=new JSONObject();
+		jsonObject.put("id", "");
+		jsonObject.put("name", "请选择...");
+		jsonArray.add(jsonObject);
+		JSONArray jsonArray2 = BigTypeDao.selAll(1, 100); //获取dao返回的json集合
+		jsonArray.addAll(jsonArray2);
+		ResponseUtil.write(response, jsonArray);
+		
+	}
+
 }
